@@ -73,11 +73,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Source/Skripsi/Library/Artifacts
-Source/Skripsi/Library/StateCache
-Source/Skripsi/Logs
-Source/Skripsi/UserSettings
-Source/Skripsi/Temp
-Source/Skripsi/Library
-Source/Skripsi/.vsconfig
-Source/Skripsi/obj
