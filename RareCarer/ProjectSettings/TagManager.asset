@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sunray
+  - Sky
+  - PlayerInner
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - Water
   - UI
   - sunray
-  - 
-  - 
-  - 
+  - PlayerInner
+  - Player
+  - Sky
   - 
   - 
   - 
