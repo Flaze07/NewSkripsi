@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace RC
+{
+
 public class AnimalRoomUI : MonoBehaviour
 {
     [SerializeField]
@@ -32,3 +35,6 @@ public class AnimalRoomUI : MonoBehaviour
         closeParent.SetActive(false);
     }
 }
+
+}
+
