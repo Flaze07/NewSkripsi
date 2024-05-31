@@ -78,7 +78,7 @@ public class Sunray : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            SunbathManager.instance.IncreaseScore(1);
+            SunbathManager.instance.IncreaseScore(3 * Time.deltaTime);
         }
     }
     
