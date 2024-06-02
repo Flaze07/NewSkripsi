@@ -9,6 +9,8 @@ TagManager:
   - PlayerInner
   - Rope
   - Ground
+  - SwingObj
+  - UI
   layers:
   - Default
   - TransparentFX
