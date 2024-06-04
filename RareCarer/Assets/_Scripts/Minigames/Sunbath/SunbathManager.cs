@@ -23,8 +23,11 @@ public class SunbathManager : MonoBehaviour
     private GameObject star3;
     [SerializeField]
     private float timeLimit = 60f;
+    [SerializeField]
+    private GameObject gameEndPanel;
     private float currentTime = 0f;
     private float score;
+    private bool gameEnded = false;
 
     void Start()
     {
@@ -36,22 +39,51 @@ public class SunbathManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        score = 0;
+        score = 90;
         star1.SetActive(false);
         star2.SetActive(false);
         star3.SetActive(false);
+        gameEndPanel.SetActive(false);
     }
 
     void Update()
     {
+        if(gameEnded)
+        {
+            return;
+        }
         currentTime += Time.deltaTime;
         timeProgressBar.value = currentTime / timeLimit;
         scoreText.text = "Score: " + Mathf.RoundToInt(score) + "%";
 
         if(score >= 100)
         {
-            // Win
+            GameEnd();
         }
+
+        if(currentTime >= timeLimit)
+        {
+            GameEnd();
+        }
+    }
+
+    private void GameEnd()
+    {
+        gameEndPanel.SetActive(true);
+        if(star3.activeSelf)
+        {
+            GameManager.instance.Currency += 30;
+        }
+        else if(star2.activeSelf)
+        {
+            GameManager.instance.Currency += 20;
+        }
+        else if(star1.activeSelf)
+        {
+            GameManager.instance.Currency += 10;
+        }
+        GameManager.instance.CurrentAnimal.Play += 30;
+        gameEnded = true;
     }
 
     public void IncreaseScore(float amount)

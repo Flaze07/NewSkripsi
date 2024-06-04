@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +19,11 @@ public class Animal : MonoBehaviour
     private float hunger = 50;
     private float cleanliness = 50;
     private float play = 50;
+    public float Play
+    {
+        get => play;
+        set => play = value;
+    }
     
     [SerializeField]
     private SpriteRenderer sprite;
@@ -30,7 +37,7 @@ public class Animal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();    
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame

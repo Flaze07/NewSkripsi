@@ -28,6 +28,7 @@ public class FoodPanel : MonoBehaviour
                 }
                 GameManager.instance.CurrentAnimal.Feed(food.Type);
                 food.Amount--;
+                foodConsumable.SetFoodCount(food.Amount);
             });
         }
     }

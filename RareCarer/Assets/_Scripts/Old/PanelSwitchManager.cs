@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 using Debug = UnityEngine.Debug;
 
-namespace RC
+namespace RC.Old
 {
 
 public enum PanelSwitchDirection

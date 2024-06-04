@@ -17,6 +17,12 @@ public class ShopUI : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(LateStart());
+    }
+
+    IEnumerator LateStart()
+    {
+        yield return new WaitForEndOfFrame();
         GameManager.instance.Foods.ForEach(food =>
         {
             ShopItem shopItem = Instantiate(shopItemPrefab, shopItemParent.transform);
@@ -27,6 +33,7 @@ public class ShopUI : MonoBehaviour
         });
 
         currencyText.text = "Currency: " + GameManager.instance.Currency.ToString();
+
     }
 
     public void BuyItem(Food food)
