@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigames:
   - minigameSceneName: Sunbathing
-    minigameIcon: {fileID: 3625043607559282579, guid: 25908f0524721ce4498a8660a758ca61, type: 3}
+    minigameIcon: {fileID: 21300000, guid: 06d7ce1361f020a4189cae2ac2c15768, type: 3}
   - minigameSceneName: Swimming
     minigameIcon: {fileID: 3625043607559282579, guid: 25908f0524721ce4498a8660a758ca61, type: 3}
 --- !u!114 &914746199322774972
