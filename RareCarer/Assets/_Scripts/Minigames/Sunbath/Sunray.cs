@@ -20,7 +20,7 @@ public class Sunray : MonoBehaviour
     public delegate void HandleDisappearDelegate(int instanceID);
     public HandleDisappearDelegate HandleDisappear;
     [SerializeField]
-    private float speed = 0.2f;
+    public float speed = 0.2f;
     [SerializeField]
     private float disappearChance = 0.1f;
     private float lifetime = 0;
@@ -78,7 +78,7 @@ public class Sunray : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            SunbathManager.instance.IncreaseScore(3 * Time.deltaTime);
+            SunbathManager.instance.IncreaseScore(2.5f * Time.deltaTime);
         }
     }
     

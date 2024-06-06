@@ -9,7 +9,12 @@ namespace RC.Sunbath
 public class SunrayManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject sunrayPrefab;
+    private List<GameObject> sunrayPrefab;
+    [SerializeField]
+    private float minSpeed;
+    [SerializeField]
+    private float maxSpeed;
+    
     private List<Sunray> sunrays = new();
 
     private SpriteRenderer spriteRenderer;
@@ -24,11 +29,13 @@ public class SunrayManager : MonoBehaviour
         if (Random.Range(0f, 1f) < spawningChance(sunrays.Count))
         {
             var randomLoc = RandomPosition();
-            var sunray = Instantiate(sunrayPrefab, new Vector3(randomLoc.x, randomLoc.y, -2), Quaternion.identity).GetComponent<Sunray>();
+            var sunray = Instantiate(sunrayPrefab[Random.Range(0,sunrayPrefab.Count)], new Vector3(randomLoc.x, randomLoc.y, -2), Quaternion.identity).GetComponent<Sunray>();
             var randomScale = Random.Range(1.3f, 2.1f);
             sunray.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
             sunrays.Add(sunray);
             sunray.HandleDisappear += HandleSunrayDisappear;
+            sunray.speed = Random.Range(minSpeed, maxSpeed);
+                sunray.transform.eulerAngles = new Vector3(0, 0, Random.Range(0f, 359f));
         }
     }
 
