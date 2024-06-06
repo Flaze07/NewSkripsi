@@ -18,6 +18,11 @@ public class Animal : MonoBehaviour
     private float happiness = 0;
     private float hunger = 50;
     private float cleanliness = 50;
+    public float Cleanliness
+    {
+        get => cleanliness;
+        set => cleanliness = value;
+    }
     private float play = 50;
     public float Play
     {
@@ -27,6 +32,9 @@ public class Animal : MonoBehaviour
     
     [SerializeField]
     private SpriteRenderer sprite;
+    public SpriteRenderer Sprite => sprite;
+    [SerializeField]
+    private AnimalCleanliness animalCleanliness;
 
     /// <summary>
     /// This event will be called when the happiness of the animal changes
@@ -41,10 +49,11 @@ public class Animal : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void AnimalUpdate()
     {
         UpdateHappiness();
         UpdateStats();
+        animalCleanliness.UpdateCleanliness();
     }
 
     public void Hide()

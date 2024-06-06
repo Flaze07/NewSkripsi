@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         availableAnimals.Add(AnimalParent.instance.Animals[0]);
-        availableAnimals.Add(AnimalParent.instance.Animals[1]);
         currentAnimal = availableAnimals[0];
     }
 
@@ -97,7 +96,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for(int i = 0; i < availableAnimals.Count; i++)
+        {
+            availableAnimals[i].AnimalUpdate();
+        }
     }
 
     public void SwitchAnimal(int direction)
