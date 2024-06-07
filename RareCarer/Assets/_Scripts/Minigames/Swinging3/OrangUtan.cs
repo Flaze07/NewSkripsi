@@ -19,7 +19,7 @@ public class OrangUtan : MonoBehaviour
     private float radiusValue = 0.02f;
     private float currentRotateAcceleration;
     private float currentRotateSpeed;
-    private bool attached = false;
+    public bool attached = false;
     
     public bool Attached => attached;
     public GameObject attachedUnit;

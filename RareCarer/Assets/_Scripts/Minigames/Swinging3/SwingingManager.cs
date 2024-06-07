@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 namespace RC.Swinging3
 {
@@ -39,6 +40,8 @@ namespace RC.Swinging3
 
         [SerializeField]
         private float playerTimer;
+        [SerializeField]
+        private Image playerTimerUI;
         [SerializeField]
         private OrangUtan playerCharacter;
         
@@ -119,6 +122,7 @@ namespace RC.Swinging3
             if (currTimer > playerTimer)
             {
                 //unattach the player and DIE
+                playerCharacter.attached = false;
             }
 
             //reset the timer
@@ -126,6 +130,32 @@ namespace RC.Swinging3
             {
                 currTimer = 0;
             }
+
+            if(playerCharacter.attached)
+            {
+                GameObject timerParent = playerTimerUI.transform.parent.gameObject;
+                timerParent.SetActive(true);
+
+                Vector3 timerOffset;
+                if(playerCharacter.attachedUnit.transform.position.y + 2f > maxYPlatform)
+                {
+                    timerOffset = new Vector3(0.5f, -3f, 0);
+                }
+                else
+                {
+                    timerOffset = new Vector3(0.5f, 1, 0);
+                }
+                Vector3 timerTargetPosition = Camera.main.WorldToScreenPoint(playerCharacter.attachedUnit.transform.position + timerOffset);
+                timerParent.transform.position = timerTargetPosition;
+
+                float timerProgress = 1 - currTimer / playerTimer;
+                playerTimerUI.fillAmount = timerProgress;
+            }
+            else
+            {
+                playerTimerUI.transform.parent.gameObject.SetActive(false);
+            }
+
         }
 
         private void ChangeScore()
