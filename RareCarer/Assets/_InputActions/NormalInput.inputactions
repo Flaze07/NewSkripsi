@@ -24,22 +24,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump2",
+                    "name": "Debug",
                     "type": "Button",
-                    "id": "83f61fd8-a624-4160-9d9e-30ae2443df55",
+                    "id": "32319e1e-f2b0-49b1-bad7-10810ef9a6b1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Value",
-                    "id": "f4415453-54e7-44dd-afb2-89d43221cf10",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -166,23 +157,12 @@
                 },
                 {
                     "name": "",
-                    "id": "eb321143-3f23-4f10-9d6b-aabe17fed3e2",
-                    "path": "<Keyboard>/w",
+                    "id": "2b53c9a8-d094-4bc7-8bdd-954d4eb8f57a",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "44baf8a5-2639-41d7-9560-1776e3a4805f",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
+                    "action": "Debug",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

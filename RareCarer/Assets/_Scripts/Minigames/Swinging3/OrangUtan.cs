@@ -20,6 +20,9 @@ public class OrangUtan : MonoBehaviour
     private float currentRotateAcceleration;
     private float currentRotateSpeed;
     private bool attached = false;
+    
+    public bool Attached => attached;
+    public GameObject attachedUnit;
 
     private Vector2 velocity;
 
@@ -32,7 +35,13 @@ public class OrangUtan : MonoBehaviour
         currentRotateAcceleration = rotateAcceleration;   
     }
 
-    // Update is called once per frame
+        //debug stuff delete later
+        public void OnDebug()
+        {
+            transform.position = new Vector3(-4.77f, 2, 0);
+        }
+
+        // Update is called once per frame
     void FixedUpdate()
     {
         if(!attached)
@@ -104,6 +113,7 @@ public class OrangUtan : MonoBehaviour
         currentRotateSpeed = 0;
         velocity = Vector2.zero;
 
+        attachedUnit = target;
         attached = true;
     }
 }
