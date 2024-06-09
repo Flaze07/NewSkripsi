@@ -5,6 +5,12 @@ using UnityEngine;
 namespace RC.Hunting
 {
 
+public class Command
+{
+    public string action;
+    public float position;
+}
+
 public class AjagController : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +21,9 @@ public class AjagController : MonoBehaviour
     public bool crouchState;
     [SerializeField]
     private CheckGround checkGround;
+    private float currentPos = 0;
+    public float CurrentPos => currentPos;
+    public List<Command> commands = new List<Command>();
 
     void Start()
     {
@@ -30,6 +39,50 @@ public class AjagController : MonoBehaviour
     }
 
     void Update()
+    {
+        HandleBoth();
+        if(HuntingManager.instance.MainAjag == this)
+        {
+            HandleMain();
+        }
+        else
+        {
+            NonMain();
+        }
+    }
+
+    private void HandleMain()
+    {
+        currentPos += Time.deltaTime;
+    }
+
+    private void NonMain()
+    {
+        var main = HuntingManager.instance.MainAjag;
+        currentPos = main.CurrentPos - ((main.transform.position.x - transform.position.x) / HuntingManager.instance.DelayValue);
+        if(commands.Count == 0)
+        {
+            return;
+        }
+        if(currentPos >= commands[0].position)
+        {
+            if(commands[0].action == "jump")
+            {
+                Jump();
+            }
+            if(commands[0].action == "crouch")
+            {
+                Crouch();
+            }
+            if(commands[0].action == "stand")
+            {
+                Stand();
+            }
+            commands.RemoveAt(0);
+        }
+    }
+
+    private void HandleBoth()
     {
         if(checkGround.IsGrounded)
         {
@@ -60,6 +113,15 @@ public class AjagController : MonoBehaviour
         // crouching.SetActive(false);
     }
     
+    public void AddCommands(Command newCommand)
+    {
+        commands.Add(newCommand);
+    }
+
+    public void UpdatePos(float newPos)
+    {
+        currentPos = newPos;
+    }
 }
 
 }
