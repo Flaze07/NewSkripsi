@@ -83,8 +83,12 @@ public class HuntingManager : MonoBehaviour
         while(t < changeAjagTime)
         {
             t += Time.deltaTime;
-            from.position = Vector3.Lerp(fromPos, toPos, t / changeAjagTime);
-            to.position = Vector3.Lerp(toPos, fromPos, t / changeAjagTime);
+            Vector3 fromVec = from.position;
+            Vector3 toVec = to.position;
+            fromVec.x = Mathf.Lerp(fromPos.x, toPos.x, t / changeAjagTime);
+            toVec.x = Mathf.Lerp(toPos.x, fromPos.x, t / changeAjagTime);
+            from.position = fromVec;
+            to.position = toVec;
             yield return null;
         }
     }
