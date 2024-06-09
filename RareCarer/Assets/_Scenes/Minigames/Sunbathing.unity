@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046752632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82434739a09099468e8765ca9742d71, type: 3}
+  m_Script: {fileID: 11500000, guid: 29d6d610f7f796d46b03c036f4d758a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   barWidth: 499
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   star3: {fileID: 93530575}
   timeLimit: 60
   gameEndPanel: {fileID: 297079698}
-  bar: {fileID: 1046752636}
+  bar: {fileID: 0}
   timeCounter: {fileID: 681353441}
 --- !u!1 &1641258364
 GameObject:
