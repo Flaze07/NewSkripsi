@@ -20,6 +20,7 @@ public class MinigamePanel : MonoBehaviour
         foreach(var minigame in animalMinigame.UnlockedMinigames)
         {
             GameObject minigameButton = Instantiate(minigameButtonPrefab, minigameButtonParent.transform);
+            minigameButton.GetComponent<MinigameButton>().setStars(minigame.starAchieved);
             var image = minigameButton.GetComponent<Image>();
             image.sprite = minigame.MinigameIcon;
             Button btn = minigameButton.GetComponent<Button>();

@@ -187,6 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70618902}
   - component: {fileID: 70618901}
+  - component: {fileID: 70618903}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -221,6 +222,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &70618903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70618900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b514eb2a15e15c441be298399fd81aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerBar: {fileID: 833678092}
+  cleanlinessBar: {fileID: 1806169124}
+  PlayBar: {fileID: 1258541599}
+  happinessBar: {fileID: 758356343}
+  interactedOption: {fileID: 789970419}
+  interactedHungerBar: {fileID: 1091648207}
+  interactedCleanlinessBar: {fileID: 266318083}
+  interactedPlayBar: {fileID: 76937509}
 --- !u!1 &76937505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1085,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 282492433}
   m_OnClick:
     m_PersistentCalls:
@@ -3408,7 +3429,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1217402240}
   - component: {fileID: 1217402241}
-  - component: {fileID: 1217402243}
   - component: {fileID: 1217402242}
   m_Layer: 0
   m_Name: Manager
@@ -3487,22 +3507,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endpointLeft: {fileID: 61693221}
   endpointRight: {fileID: 438377090}
---- !u!114 &1217402243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217402238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aee23c7762357f498fc4a447d0fd9cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  komodoAnimal: {fileID: 1810803594}
-  orangUtanAnimal: {fileID: 2046727568}
-  ajagAnimal: {fileID: 716198441}
-  shopButton: {fileID: 282492432}
 --- !u!1 &1224396944
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,7 +3545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -63}
+  m_AnchoredPosition: {x: 960, y: -246.1796}
   m_SizeDelta: {x: 1920, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224396946
@@ -4610,12 +4614,12 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -4776,6 +4780,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2730417468856464863, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
   m_PrefabInstance: {fileID: 2146211371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1745243010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745243012}
+  - component: {fileID: 1745243011}
+  m_Layer: 0
+  m_Name: UnlockManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1745243011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745243010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aee23c7762357f498fc4a447d0fd9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  komodoAnimal: {fileID: 1810803594}
+  orangUtanAnimal: {fileID: 2046727568}
+  ajagAnimal: {fileID: 716198441}
+  shopButton: {fileID: 282492432}
+--- !u!4 &1745243012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745243010}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 268.55673, y: 163.81027, z: 0.15476575}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747291381
 GameObject:
   m_ObjectHideFlags: 0
@@ -4794,7 +4846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1747291382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4912,7 +4964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -243}
+  m_AnchoredPosition: {x: 960, y: -217.59}
   m_SizeDelta: {x: 1920, y: 183.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1801576195
@@ -5490,14 +5542,6 @@ MonoBehaviour:
   - {fileID: 1810803594}
   - {fileID: 716198441}
   - {fileID: 2046727568}
-  hungerBar: {fileID: 833678092}
-  cleanlinessBar: {fileID: 1806169124}
-  PlayBar: {fileID: 1258541599}
-  happinessBar: {fileID: 758356343}
-  interactedOption: {fileID: 789970419}
-  interactedHungerBar: {fileID: 1091648207}
-  interactedCleanlinessBar: {fileID: 266318083}
-  interactedPlayBar: {fileID: 76937509}
 --- !u!1 &1886779648
 GameObject:
   m_ObjectHideFlags: 0
@@ -6555,6 +6599,7 @@ SceneRoots:
   - {fileID: 257214698}
   - {fileID: 1327266950}
   - {fileID: 70618902}
+  - {fileID: 1745243012}
   - {fileID: 1217402240}
   - {fileID: 1849086377}
   - {fileID: 746071945}

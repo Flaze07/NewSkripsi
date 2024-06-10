@@ -15,6 +15,7 @@ public class AnimalMinigameData
     [SerializeField]
     private Sprite minigameIcon;
     public Sprite MinigameIcon => minigameIcon;
+    public int starAchieved = 0;
 }
 
 public class AnimalMinigame : MonoBehaviour

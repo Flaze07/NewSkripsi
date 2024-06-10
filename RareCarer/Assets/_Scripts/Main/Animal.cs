@@ -69,7 +69,11 @@ namespace RC
                 UpdateHappiness();
                 UpdateStats();
                 animalCleanliness.UpdateCleanliness();
-                animalParent.UpdateBar(this);
+
+                if(BarManager.instance != null)
+                {
+                    BarManager.instance.UpdateBar(this);
+                }
             }
         }
 
