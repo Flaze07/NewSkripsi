@@ -19,19 +19,19 @@ namespace RC
         private bool unlocked = false;
         private float happiness = 0;
         public float Happiness => happiness;
-        private float hunger = 150;
+        private float hunger = 50;
         public float Hunger
         {
             get => hunger;
             set => hunger = value;
         }
-        private float cleanliness = 150;
+        private float cleanliness = 50;
         public float Cleanliness
         {
             get => cleanliness;
             set => cleanliness = value;
         }
-        private float play = 150;
+        private float play = 50;
         public float Play
         {
             get => play;
