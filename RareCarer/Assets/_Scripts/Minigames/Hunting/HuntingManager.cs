@@ -16,12 +16,23 @@ public class HuntingManager : MonoBehaviour
     private AjagController mainAjag;
     public AjagController MainAjag => mainAjag;
     [SerializeField]
+    private GameObject mainAjagBtn;
+    public GameObject MainAjagBtn { get => mainAjagBtn; set => mainAjagBtn = value;}
+    [SerializeField]
     private GameObject ajagParent;
     [SerializeField]
     private float delayValue;
     public float DelayValue => delayValue;
     [SerializeField]
     private float changeAjagTime;
+    public float ChangeAjagTime => changeAjagTime;
+    public bool IsChanging { get; private set; }
+    [SerializeField]
+    private float staminaIncrement;
+    public float StaminaIncrement => staminaIncrement;
+    [SerializeField]
+    private float staminaDecrement;
+    public float StaminaDecrement => staminaDecrement;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +80,7 @@ public class HuntingManager : MonoBehaviour
 
     public void ChangeMainAjag(AjagController ajag)
     {
+        IsChanging = true;
         StartCoroutine(AnimateChangeAjag(mainAjag.transform, ajag.transform));
         ajag.UpdatePos(mainAjag.CurrentPos);
         mainAjag = ajag;
@@ -91,6 +103,7 @@ public class HuntingManager : MonoBehaviour
             to.position = toVec;
             yield return null;
         }
+        IsChanging = false;
     }
 }
 

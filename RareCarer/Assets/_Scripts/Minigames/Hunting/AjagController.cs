@@ -24,9 +24,18 @@ public class AjagController : MonoBehaviour
     private float currentPos = 0;
     public float CurrentPos => currentPos;
     public List<Command> commands = new List<Command>();
+    private float maxStamina = 1;
+    private float currentStamina;
+    public float CurrentStamina {
+        get => currentStamina;
+        set {
+            currentStamina = Mathf.Clamp(value, 0, maxStamina);
+        }
+    }
 
     void Start()
     {
+        currentStamina = maxStamina;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -54,11 +63,13 @@ public class AjagController : MonoBehaviour
     private void HandleMain()
     {
         currentPos += Time.deltaTime;
+        CurrentStamina -= HuntingManager.instance.StaminaDecrement * Time.deltaTime;
     }
 
     private void NonMain()
     {
         var main = HuntingManager.instance.MainAjag;
+        CurrentStamina += HuntingManager.instance.StaminaIncrement * Time.deltaTime;
         currentPos = main.CurrentPos - ((main.transform.position.x - transform.position.x) / HuntingManager.instance.DelayValue);
         if(commands.Count == 0)
         {
