@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2651064496000430449}
   - component: {fileID: 2712848920848428780}
   - component: {fileID: 572314662751382654}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

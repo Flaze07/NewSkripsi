@@ -13,6 +13,9 @@ public class HuntingManager : MonoBehaviour
     private float jumpForce;
     public float JumpForce => jumpForce;
     [SerializeField]
+    private Deer deer;
+    public Deer Deer => deer;
+    [SerializeField]
     private AjagController mainAjag;
     public AjagController MainAjag => mainAjag;
     [SerializeField]

@@ -16,6 +16,14 @@ public class Obstacle : MonoBehaviour
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player") && other.transform.parent == HuntingManager.instance.MainAjag.transform)
+        {
+            StartCoroutine(HuntingManager.instance.Deer.MoveForward());
+        }
+    }
 }
 
 }
