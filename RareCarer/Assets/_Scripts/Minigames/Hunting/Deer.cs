@@ -12,6 +12,10 @@ public class Deer : MonoBehaviour
 
     void Update()
     {
+        if(HuntingManager.instance.MainAjag.CurrentStamina <= 0)
+        {
+            return;
+        }
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
 }
