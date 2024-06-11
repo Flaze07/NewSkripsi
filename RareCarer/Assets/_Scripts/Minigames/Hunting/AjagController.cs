@@ -133,6 +133,26 @@ public class AjagController : MonoBehaviour
     {
         currentPos = newPos;
     }
+
+    public void Flash()
+    {
+        StartCoroutine(FlashRoutine());
+    }
+
+    public IEnumerator FlashRoutine()
+    {
+        var sprite = GetComponentInChildren<SpriteRenderer>();
+        var flashTime = HuntingManager.instance.DamageCooldown;
+        var flashAmount = HuntingManager.instance.FlashAmount;
+        var t = 0;
+        while(t < flashAmount)
+        {
+            sprite.enabled = !sprite.enabled;
+            t += 1;
+            yield return new WaitForSeconds(flashTime / flashAmount);
+        }
+        sprite.enabled = true;
+    }
 }
 
 }

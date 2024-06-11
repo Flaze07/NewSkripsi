@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,6 +37,18 @@ public class HuntingManager : MonoBehaviour
     [SerializeField]
     private float staminaDecrement;
     public float StaminaDecrement => staminaDecrement;
+    [SerializeField]
+    private float flashAmount;
+    public float FlashAmount => flashAmount;
+    [SerializeField]
+    private float damageCooldown;
+    public float DamageCooldown => damageCooldown;
+    private float damageCooldownCount = 0;
+    public bool IsDamaged { 
+        get {
+            return damageCooldownCount > 0;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +59,14 @@ public class HuntingManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    void Update()
+    {
+        if(damageCooldownCount > 0)
+        {
+            damageCooldownCount -= Time.deltaTime;
         }
     }
 
@@ -107,6 +128,11 @@ public class HuntingManager : MonoBehaviour
             yield return null;
         }
         IsChanging = false;
+    }
+
+    public void AjagDamaged()
+    {
+        damageCooldownCount = damageCooldown;
     }
 }
 

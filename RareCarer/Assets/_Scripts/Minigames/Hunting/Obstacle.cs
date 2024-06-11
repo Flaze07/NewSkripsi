@@ -19,9 +19,16 @@ public class Obstacle : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(HuntingManager.instance.IsDamaged)
+        {
+            return;
+        }
         if(other.CompareTag("Player") && other.transform.parent == HuntingManager.instance.MainAjag.transform)
         {
+            HuntingManager.instance.AjagDamaged();
+            Debug.Log("TEST");
             StartCoroutine(HuntingManager.instance.Deer.MoveForward());
+            HuntingManager.instance.MainAjag.Flash();
         }
     }
 }
