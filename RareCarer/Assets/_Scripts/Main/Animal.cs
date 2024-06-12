@@ -19,24 +19,32 @@ namespace RC
         private bool unlocked = false;
         private float happiness = 0;
         public float Happiness => happiness;
-        private float hunger = 50;
+        private float hunger = 100;
         public float Hunger
         {
             get => hunger;
             set => hunger = value;
         }
-        private float cleanliness = 50;
+        private float cleanliness = 100;
         public float Cleanliness
         {
             get => cleanliness;
             set => cleanliness = value;
         }
-        private float play = 50;
+        private float play = 100;
         public float Play
         {
             get => play;
             set => play = value;
         }
+
+        [SerializeField]
+        private GameObject sadReaction;
+        [SerializeField]
+        private GameObject happyReaction;
+        [SerializeField]
+        private float timeReaction;
+        private float currentTimeReaction;
 
         // Animal Parent
         [SerializeField]
@@ -70,9 +78,19 @@ namespace RC
                 UpdateStats();
                 animalCleanliness.UpdateCleanliness();
 
-                if(BarManager.instance != null)
+                if(BarManager.instance != null && GameManager.instance.CurrentAnimal == this)
                 {
                     BarManager.instance.UpdateBar(this);
+                }
+
+                if(currentTimeReaction >= timeReaction)
+                {
+                    happyReaction.SetActive(false);
+                    sadReaction.SetActive(false);
+                }
+                else
+                {
+                    timeReaction += Time.deltaTime;
                 }
             }
         }
@@ -93,13 +111,19 @@ namespace RC
         /// </summary>
         public void Feed(string foodType)
         {
+            currentTimeReaction = 0;
+            happyReaction.SetActive(false);
+            sadReaction.SetActive(false);
+
             if (likedFood.Contains(foodType))
             {
                 hunger += 40;
+                happyReaction.SetActive(true);
             }
             else
             {
                 hunger += 10;
+                sadReaction.SetActive(true);
             }
         }
 
@@ -114,7 +138,7 @@ namespace RC
             if (!(hunger < 25 && cleanliness < 25 && play < 25))
             {
                 float before = happiness;
-                happiness += 0.25f * Time.deltaTime;
+                happiness += 10f * Time.deltaTime;
                 OnHappinessChange.Invoke(before, happiness);
             }
             else if (!(hunger > 50 && cleanliness > 50 && play > 50))
@@ -138,6 +162,12 @@ namespace RC
             hunger = MathF.Min(MathF.Max(hunger, 0),100f);
             cleanliness = MathF.Min(MathF.Max(cleanliness, 0),100f);
             play = MathF.Min(MathF.Max(play, 0),100f);
+        }
+
+        public void Unlock()
+        {
+            unlocked = true;
+            GameManager.instance.AddAvailableAnimal(this);
         }
     }
 

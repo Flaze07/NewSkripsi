@@ -16,6 +16,9 @@ namespace RC
         private bool[] ajagUnlock = new bool[4];
 
         [SerializeField] private Button shopButton;
+        [SerializeField] private GameObject animalUnlockPanel;
+        [SerializeField] private TMPro.TextMeshProUGUI animalUnlockPanelName;
+        [SerializeField] private GameObject shopUnlockPanel;
 
         private int passiveIncome;
 
@@ -31,6 +34,28 @@ namespace RC
             OrangUtanUnlocks();
         }
 
+        public void CloseShopUnlockPanel()
+        {
+            shopUnlockPanel.SetActive(false);
+        }
+
+        public void CloseAnimalUnlockPanel()
+        {
+            animalUnlockPanel.SetActive(false);
+        }
+
+        public void OpenAnimalunlockPanel(string animal)
+        {
+            animalUnlockPanel.SetActive(true);
+            animalUnlockPanelName.text = animal;
+        }
+
+        public void OpenShopUnlockPanel()
+        {
+            shopUnlockPanel.SetActive(true);
+        }
+
+        #region Unlocks
 
         private void KomodoUnlocks()
         {
@@ -47,6 +72,8 @@ namespace RC
                 if (komodoUnlock[1] != true)
                 {
                     //unlock ajag
+                    ajagAnimal.Unlock();
+                    OpenAnimalunlockPanel("Ajag");
                     komodoUnlock[1] = true;
                 }
             }
@@ -125,16 +152,14 @@ namespace RC
         private void AjagUnlocks()
         {
 
-            if (komodoAnimal.Happiness > 50f)
+            if (ajagAnimal.Happiness > 50f)
             {
-
-            }
-            else
-            {
-
+                orangUtanAnimal.Unlock();
+                OpenAnimalunlockPanel("Orang Utan");
+                ajagUnlock[1] = true;
             }
 
-            if (komodoAnimal.Happiness > 75f)
+            if (ajagAnimal.Happiness > 75f)
             {
                 if (ajagUnlock[2] != true)
                 {
@@ -151,15 +176,12 @@ namespace RC
                 }
             }
 
-            if (komodoAnimal.Happiness > 100f)
+            if (ajagAnimal.Happiness > 100f)
             {
-
-            }
-            else
-            {
-
+                ajagUnlock[3] = true;
             }
         }
+        #endregion
     }
 
 

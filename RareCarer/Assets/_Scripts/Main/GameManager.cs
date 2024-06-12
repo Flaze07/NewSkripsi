@@ -20,7 +20,10 @@ namespace RC
         private int price;
         [SerializeField]
         private Sprite sprite;
+        [SerializeField]
+        private string description;
 
+        public string Description => description;
         public string Type => type;
         public int Amount
         {
@@ -34,6 +37,7 @@ namespace RC
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance;
+        [SerializeField]
         private List<Animal> availableAnimals = new();
         [SerializeField]
         private Animal currentAnimal;
@@ -120,6 +124,11 @@ namespace RC
                 passiveIncomeTimer -= 60f;
                 currency += passiveIncome;
             }
+        }
+
+        public void AddAvailableAnimal(Animal animal)
+        {
+            availableAnimals.Add(animal);
         }
 
         public void SwitchAnimal(int direction)
