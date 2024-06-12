@@ -20,6 +20,8 @@ namespace RC
         private Image PlayBar;
         [SerializeField]
         private MinigameUIBar happinessBar;
+        [SerializeField]
+        private MinigameUIBar happinessBarInPanel;
 
         //interacted UI Elements
         [SerializeField]
@@ -58,6 +60,7 @@ namespace RC
             }
 
             happinessBar.ChangeProgress(animal.Happiness);
+            happinessBarInPanel.ChangeProgress(animal.Happiness);
         }
     }
 }
