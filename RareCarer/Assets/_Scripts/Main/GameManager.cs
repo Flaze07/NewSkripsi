@@ -156,7 +156,25 @@ namespace RC
             switchAnimal.Switch(direction, currentAnimal, nextAnimal);
             currentAnimal = availableAnimals[nextIdx];
         }
-    }
+        public void SaveData()
+        {
+            PlayerPrefs.SetInt("Animal Count", availableAnimals.Count);
+            PlayerPrefs.SetInt("Currency", currency);
+            for(int i = 0; i < availableAnimals.Count; ++i)
+            {
+                PlayerPrefs.SetFloat($"Animal {i} happiness", availableAnimals[i].Happiness);
+                PlayerPrefs.SetFloat($"Animal {i} hunger", availableAnimals[i].Hunger);
+                PlayerPrefs.SetFloat($"Animal {i} cleanliness", availableAnimals[i].Cleanliness);
+                PlayerPrefs.SetFloat($"Animal {i} play", availableAnimals[i].Play);
+            }
 
+            var achievementManager = AchievementManager.instance;
+            var achievements = achievementManager.AchievementList;
+            for(int i = 0; i < achievements.Count; ++i)
+            {
+                PlayerPrefs.SetInt($"Achievement {i} unlocked", achievements[i].unlocked ? 1 : 0);
+            }
+        }
+    }
 }
 
