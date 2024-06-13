@@ -101,6 +101,7 @@ namespace RC
             if (komodoAnimal.Happiness >= 100f)
             {
                 komodoUnlock[3] = true;
+                AchievementManager.instance.UnlockAchievement("Komodo's Love");
             }
         }
 
@@ -146,6 +147,7 @@ namespace RC
             if (orangUtanAnimal.Happiness > 100f)
             {
                 orangUtanUnlock[3] = true;
+                AchievementManager.instance.UnlockAchievement("Orang Utan's Love");
             }
         }
 
@@ -179,6 +181,7 @@ namespace RC
             if (ajagAnimal.Happiness > 100f)
             {
                 ajagUnlock[3] = true;
+                AchievementManager.instance.UnlockAchievement("Ajag's Love");
             }
         }
         #endregion
