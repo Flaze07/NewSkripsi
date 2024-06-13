@@ -9749,8 +9749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   komodoAnimal: {fileID: 1810803594}
-  orangUtanAnimal: {fileID: 716198441}
-  ajagAnimal: {fileID: 2046727568}
+  orangUtanAnimal: {fileID: 2046727568}
+  ajagAnimal: {fileID: 716198441}
   titleText: {fileID: 1942105870}
   unlock100: {fileID: 892407127}
   unlock75: {fileID: 1660843018}

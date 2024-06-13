@@ -22,6 +22,7 @@ namespace RC
 
         public void ClosePanel(GameObject go)
         {
+            Debug.Log(go);
             go.SetActive(false);
         }
 
