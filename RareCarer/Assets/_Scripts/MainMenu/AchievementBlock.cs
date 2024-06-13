@@ -15,5 +15,20 @@ namespace RC.MainMenu
         public Image ImageComponent => imageComponent;
         public TextMeshProUGUI AchievementName => achievementTitle;
         public TextMeshProUGUI AchievementDescription => achievementDescription;
+
+
+        public void Initalize(string achievementTitle, string achievementDescription, Sprite achievementSprite,bool unlocked)
+        {
+            if(unlocked)
+            {
+
+            }
+            else
+            {
+                
+            }
+        }
+
+
     }
 }

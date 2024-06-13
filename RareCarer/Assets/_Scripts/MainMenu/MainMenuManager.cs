@@ -13,16 +13,17 @@ namespace RC.MainMenu
         [SerializeField] private Button quitButton;
         [SerializeField] private Button achievementButton;
 
-        [SerializeField] private AchievementManager achievementManager;
+        [SerializeField] private AchievementUI achievementManager;
 
         public void OpenAchievement()
         {
             achievementManager.gameObject.SetActive(true);
-
+            achievementManager.Initialize();
         }
         
         public void CloseAchievement()
         {
+            achievementManager.CloseAchievement();
             achievementManager.gameObject.SetActive(false);
         }
         
