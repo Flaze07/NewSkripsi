@@ -12,6 +12,8 @@ namespace RC.Hunting
         private TextMeshProUGUI distanceText;
         [SerializeField]
         private TextMeshProUGUI timerText;
+        [SerializeField]
+        private Image barTimer;
 
         [SerializeField]
         private Sprite StarUnlockSprite;
@@ -21,6 +23,18 @@ namespace RC.Hunting
         private Image star2;
         [SerializeField]
         private Image star3;
+
+
+        [SerializeField]
+        private Color speedIndicatorTrue;
+        [SerializeField] 
+        private Color speedIndicatorFalse;
+        [SerializeField]
+        private Image speedIndicator1;
+        [SerializeField]
+        private Image speedIndicator2;
+        [SerializeField]
+        private Image speedIndicator3;
 
 
         private HuntingManager manager;
@@ -42,6 +56,38 @@ namespace RC.Hunting
                 timerText.text = Mathf.Ceil(manager.CurrentGameTime).ToString();
 
                 StarChecker();
+                GameTimer();
+                SpeedUI();
+            }
+        }
+
+        public void SpeedUI()
+        {
+            if(manager.SpeedValue >= 1)
+            {
+                speedIndicator1.color = speedIndicatorTrue;
+            }
+            else
+            {
+                speedIndicator1.color = speedIndicatorFalse;
+            }
+
+            if (manager.SpeedValue >= 2)
+            {
+                speedIndicator2.color = speedIndicatorTrue;
+            }
+            else
+            {
+                speedIndicator2.color = speedIndicatorFalse;
+            }
+
+            if (manager.SpeedValue >= 3)
+            {
+                speedIndicator3.color = speedIndicatorTrue;
+            }
+            else
+            {
+                speedIndicator3.color = speedIndicatorFalse;
             }
         }
 
@@ -61,6 +107,14 @@ namespace RC.Hunting
             {
                 star3.sprite = StarUnlockSprite;
             }
+        }
+
+        public void GameTimer()
+        {
+            float percentage = manager.CurrentGameTime / manager.GameTimer;
+
+            barTimer.fillAmount = percentage;
+            timerText.text = Mathf.CeilToInt( manager.CurrentGameTime ).ToString();
         }
     }
 

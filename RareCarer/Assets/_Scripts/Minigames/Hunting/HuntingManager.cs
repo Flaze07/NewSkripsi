@@ -33,6 +33,11 @@ namespace RC.Hunting
         [SerializeField]
         private float ajagSpeed;
         [SerializeField]
+        private int speedValue;
+        public int SpeedValue => speedValue;
+        [SerializeField]
+        private AnimationCurve speedCurve;
+        [SerializeField]
         private float delayValue;
         public float DelayValue => delayValue;
 
@@ -64,6 +69,7 @@ namespace RC.Hunting
 
         [SerializeField]
         private float gameTimer;
+        public float GameTimer => gameTimer;
         private float currentGameTime;
         public float CurrentGameTime => currentGameTime;
         private int totalStar;
@@ -78,6 +84,8 @@ namespace RC.Hunting
                 return damageCooldownCount > 0;
             }
         }
+
+        private bool initialized;
         // Start is called before the first frame update
         void Start()
         {
@@ -87,7 +95,9 @@ namespace RC.Hunting
                 deer.transform.position = new Vector3(ajagParent.transform.position.x + (distance/ distancePerUnit),deer.transform.position.y, deer.transform.position.z);
                 huntingUI.Initialize(this);
                 currentGameTime = gameTimer;
+                lowestDistance = distance;
                 GameEndPanel.SetActive(false);
+                initialized = true;
             }
             else
             {
@@ -97,28 +107,64 @@ namespace RC.Hunting
 
         void Update()
         {
-            if (damageCooldownCount > 0)
+            if(initialized)
             {
-                damageCooldownCount -= Time.deltaTime;
-            }
+                if (damageCooldownCount > 0)
+                {
+                    damageCooldownCount -= Time.deltaTime;
+                }
 
-            float currAjagSpeed = 0;
-            if(MainAjag.CurrentStamina > 0.6f)
+
+                currentGameTime -= Time.deltaTime;
+
+                CheckEnding();
+                ManageSpeed();
+                CheckDistance();
+
+            }
+        }
+
+        public void CheckDistance()
+        {
+            distance = (deer.transform.position.x - (ajagParent.transform.position.x + 5)) * distancePerUnit;
+            if (distance < lowestDistance) lowestDistance = distance;
+
+            if(lowestDistance <= 0)
             {
-                currAjagSpeed = ajagSpeed;
+                totalStar = 3;
             }
-            else if (mainAjag.CurrentStamina > 0.3f)
+            else if (lowestDistance <= 15)
             {
-                currAjagSpeed = ajagSpeed/2f;
+                totalStar = 2;  
             }
-            deer.MoveBackward(currAjagSpeed / distancePerUnit * Time.deltaTime);
+            else if (lowestDistance <= 30)
+            {
+                totalStar = 1;
+            }
+        }
 
-            distance = (deer.transform.position.x - (ajagParent.transform.position.x + 1)) * distancePerUnit;
-            if(distance < lowestDistance) lowestDistance = distance;
+        public void ManageSpeed()
+        {
+            if(mainAjag.CurrentStamina > 0.60f)
+            {
+                speedValue = 3;
+            }
+            else if (MainAjag.CurrentStamina > 0.25f )
+            {
+                speedValue = 2;
+            }
+            else if (mainAjag.CurrentStamina > 0f)
+            {
+                speedValue = 1;
+            }
+            else
+            {
+                speedValue = 0;
+            }
+            
+            float finalSpeed = (speedCurve.Evaluate(SpeedValue)) * ajagSpeed;
 
-            currentGameTime -= Time.deltaTime;
-
-            CheckEnding();
+            deer.MoveBackward(finalSpeed / distancePerUnit * Time.deltaTime);
         }
 
         public void CheckEnding()
