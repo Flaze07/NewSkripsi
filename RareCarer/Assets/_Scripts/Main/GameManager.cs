@@ -77,6 +77,7 @@ namespace RC
         [SerializeField]
         private SwitchAnimal switchAnimal;
         public bool IsSwitching { get; set; } = false;
+        public static event Action<Animal> OnAnimalSwitch;
         // Start is called before the first frame update
         void Start()
         {
@@ -155,6 +156,7 @@ namespace RC
             Animal nextAnimal = availableAnimals[nextIdx];
             switchAnimal.Switch(direction, currentAnimal, nextAnimal);
             currentAnimal = availableAnimals[nextIdx];
+            OnAnimalSwitch?.Invoke(currentAnimal);
         }
         public void SaveData()
         {
