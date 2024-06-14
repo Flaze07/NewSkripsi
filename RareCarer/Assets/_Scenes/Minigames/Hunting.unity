@@ -1865,6 +1865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   huntingUI: {fileID: 814799615}
+  GameEndPanel: {fileID: 0}
   jumpForce: 250
   deer: {fileID: 620028636}
   mainAjag: {fileID: 1999559446}
@@ -1879,6 +1880,8 @@ MonoBehaviour:
   damageCooldown: 1
   distance: 40
   distancePerUnit: 3
+  lowestDistance: 0
+  gameTimer: 0
 --- !u!4 &814799613
 Transform:
   m_ObjectHideFlags: 0
@@ -1937,6 +1940,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceText: {fileID: 837369468}
+  timerText: {fileID: 0}
+  StarUnlockSprite: {fileID: 0}
+  star1: {fileID: 0}
+  star2: {fileID: 0}
+  star3: {fileID: 0}
 --- !u!1 &837369466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,8 +2004,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 30 m
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
+  m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
