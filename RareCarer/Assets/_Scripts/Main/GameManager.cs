@@ -164,11 +164,21 @@ namespace RC
             PlayerPrefs.SetInt("Currency", currency);
             for(int i = 0; i < availableAnimals.Count; ++i)
             {
-                PlayerPrefs.SetFloat($"Animal {i} happiness", availableAnimals[i].Happiness);
-                PlayerPrefs.SetFloat($"Animal {i} hunger", availableAnimals[i].Hunger);
-                PlayerPrefs.SetFloat($"Animal {i} cleanliness", availableAnimals[i].Cleanliness);
-                PlayerPrefs.SetFloat($"Animal {i} play", availableAnimals[i].Play);
+                var animal = availableAnimals[i];
+                PlayerPrefs.SetFloat($"Animal {i} happiness", animal.Happiness);
+                PlayerPrefs.SetFloat($"Animal {i} hunger", animal.Hunger);
+                PlayerPrefs.SetFloat($"Animal {i} cleanliness", animal.Cleanliness);
+                PlayerPrefs.SetFloat($"Animal {i} play", animal.Play);
+                
+                var minigames = animal.gameObject.GetComponent<AnimalMinigame>();
+                var minigameData = minigames.UnlockedMinigames;
+                PlayerPrefs.SetInt($"Animal {i} minigame star", minigameData[0].starAchieved);
             }
+
+            Foods.ForEach(food =>
+            {
+                PlayerPrefs.SetInt($"Food {food.Type} amount", food.Amount);
+            });
 
             var achievementManager = AchievementManager.instance;
             var achievements = achievementManager.AchievementList;
