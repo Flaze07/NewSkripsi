@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace RC
@@ -39,6 +40,7 @@ namespace RC
         public static GameManager instance;
         [SerializeField]
         private List<Animal> availableAnimals = new();
+        public List<Animal> AvailableAnimals => availableAnimals;
         [SerializeField]
         private Animal currentAnimal;
         public Animal CurrentAnimal => currentAnimal;
@@ -77,6 +79,7 @@ namespace RC
         private SwitchAnimal switchAnimal;
         public bool IsSwitching { get; set; } = false;
         public static event Action<Animal> OnAnimalSwitch;
+        public UnityEvent OnLoadSave;
         // Start is called before the first frame update
         void Start()
         {
@@ -169,9 +172,13 @@ namespace RC
             OnAnimalSwitch?.Invoke(currentAnimal);
         }
 
-        void OnApplicationQuit()
+        void OnApplicationFocus(bool hasFocus)
         {
-            SaveData();
+            if (!hasFocus)
+            {
+                SaveData();
+                // Debug.Log("CHANGED FOCUS");
+            }
         }
 
         public void SaveData()
@@ -235,6 +242,8 @@ namespace RC
             {
                 achievements[i].unlocked = PlayerPrefs.GetInt($"Achievement {i} unlocked") == 1;
             }
+
+            OnLoadSave.Invoke();
         }
     }
 }
