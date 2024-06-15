@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace RC
@@ -39,6 +40,7 @@ namespace RC
         public static GameManager instance;
         [SerializeField]
         private List<Animal> availableAnimals = new();
+        public List<Animal> AvailableAnimals => availableAnimals;
         [SerializeField]
         private Animal currentAnimal;
         public Animal CurrentAnimal => currentAnimal;
@@ -77,6 +79,7 @@ namespace RC
         private SwitchAnimal switchAnimal;
         public bool IsSwitching { get; set; } = false;
         public static event Action<Animal> OnAnimalSwitch;
+        public UnityEvent OnLoadSave;
         // Start is called before the first frame update
         void Start()
         {
@@ -96,6 +99,18 @@ namespace RC
         IEnumerator LateStart()
         {
             yield return new WaitForEndOfFrame();
+            if(PlayerPrefs.HasKey("Animal Count"))
+            {
+                LoadData();
+            }
+            else
+            {
+                InitializeData();
+            }
+        }
+
+        void InitializeData()
+        {
             availableAnimals.Add(AnimalParent.instance.Animals[0]);
             currentAnimal = availableAnimals[0];
         }
@@ -158,6 +173,16 @@ namespace RC
             currentAnimal = availableAnimals[nextIdx];
             OnAnimalSwitch?.Invoke(currentAnimal);
         }
+
+        void OnApplicationFocus(bool hasFocus)
+        {
+            if (!hasFocus)
+            {
+                SaveData();
+                // Debug.Log("CHANGED FOCUS");
+            }
+        }
+
         public void SaveData()
         {
             PlayerPrefs.SetInt("Animal Count", availableAnimals.Count);
@@ -186,6 +211,41 @@ namespace RC
             {
                 PlayerPrefs.SetInt($"Achievement {i} unlocked", achievements[i].unlocked ? 1 : 0);
             }
+        }
+
+        public void LoadData()
+        {
+            int animalCount = PlayerPrefs.GetInt("Animal Count");
+            availableAnimals.Clear();
+            for(int i = 0; i < animalCount; ++i)
+            {
+                var animal = AnimalParent.instance.Animals[i];
+                animal.Happiness = PlayerPrefs.GetFloat($"Animal {i} happiness");
+                animal.Hunger = PlayerPrefs.GetFloat($"Animal {i} hunger");
+                animal.Cleanliness = PlayerPrefs.GetFloat($"Animal {i} cleanliness");
+                animal.Play = PlayerPrefs.GetFloat($"Animal {i} play");
+                availableAnimals.Add(animal);
+
+                var minigames = animal.gameObject.GetComponent<AnimalMinigame>();
+                var minigameData = minigames.UnlockedMinigames;
+                minigameData[0].starAchieved = PlayerPrefs.GetInt($"Animal {i} minigame star");
+            }
+
+            currency = PlayerPrefs.GetInt("Currency");
+
+            Foods.ForEach(food =>
+            {
+                food.Amount = PlayerPrefs.GetInt($"Food {food.Type} amount");
+            });
+
+            var achievementManager = AchievementManager.instance;
+            var achievements = achievementManager.AchievementList;
+            for(int i = 0; i < achievements.Count; ++i)
+            {
+                achievements[i].unlocked = PlayerPrefs.GetInt($"Achievement {i} unlocked") == 1;
+            }
+
+            OnLoadSave.Invoke();
         }
     }
 }

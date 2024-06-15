@@ -34,6 +34,21 @@ namespace RC
             OrangUtanUnlocks();
         }
 
+        public void LoadSave()
+        {
+            var gameManager = GameManager.instance;
+            var availableAnimals = gameManager.AvailableAnimals;
+            if(availableAnimals.Count == 3)
+            {
+                komodoUnlock[1] = true;
+                ajagUnlock[1] = true;
+            }
+            else if(availableAnimals.Count == 2)
+            {
+                komodoUnlock[1] = true;
+            }
+        }
+
         public void CloseShopUnlockPanel()
         {
             shopUnlockPanel.SetActive(false);

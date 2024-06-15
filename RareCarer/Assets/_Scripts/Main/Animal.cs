@@ -18,7 +18,12 @@ namespace RC
         [SerializeField]
         private bool unlocked = false;
         private float happiness = 0;
-        public float Happiness => happiness;
+        public float Happiness
+        {
+            get => happiness;
+            set => happiness = value;
+        
+        }
         private float hunger = 100;
         public float Hunger
         {
