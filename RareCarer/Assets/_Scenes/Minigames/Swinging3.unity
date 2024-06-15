@@ -847,8 +847,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Orangutan lives in forests. To move between places, they like to swing
-    through the trees.
+  m_text: Orang utan tinggal di hutan-hutan. Untuk bergerak dari satu tempat ke yang
+    lain, mereka suka untuk berayun melalui pohon-pohon.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -3118,7 +3118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -205.67996, y: -91.327835}
+  m_AnchoredPosition: {x: -215.3, y: -91.327835}
   m_SizeDelta: {x: 146.28014, y: 155.6625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1315717529
@@ -3694,7 +3694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Release
+  m_text: Lepas pegangan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -3721,8 +3721,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4046,7 +4046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watch out, orangutan can only hold for so long
+  m_text: Hati-hati, orang utan tidak dapat memegang dahan terlalu lama
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -4073,8 +4073,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4375,7 +4375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 20.065521}
+  m_AnchoredPosition: {x: -0.000034146, y: 32.7}
   m_SizeDelta: {x: 172.4605, y: 30.262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762914965
@@ -4398,7 +4398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Aim for branches!
+  m_text: Fokus dalam mencapai dahan pohon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -4425,8 +4425,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

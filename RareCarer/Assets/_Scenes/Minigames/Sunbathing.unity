@@ -1241,7 +1241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -7.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &673796250
@@ -1631,8 +1631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160.5007, y: -2.631}
-  m_SizeDelta: {x: 31.5693, y: 30.262}
+  m_AnchoredPosition: {x: -162.77719, y: 15.1310005}
+  m_SizeDelta: {x: 41.1812, y: 30.262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722678068
 MonoBehaviour:
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Or
+  m_text: Atau
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -1681,14 +1681,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move Komodo
+  m_text: Menggerakkan Komodo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -2024,8 +2024,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2251,7 +2251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85}
+  m_AnchoredPosition: {x: 0, y: 97.6}
   m_SizeDelta: {x: -50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028324641
@@ -2274,8 +2274,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Komodo loves to sunbath, especially after having a meal. Help Komodo sunbath
-    by moving to places that are not clouded!
+  m_text: Komodo suka berjemur di bawah matahari, terutama setelah makan. Bantu Komodo
+    berjemur dengan menggerakkannya ke bawah sinar matahari!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -4090,7 +4090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218.8, y: 15.131}
+  m_AnchoredPosition: {x: 218.8, y: 34.869003}
   m_SizeDelta: {x: 184.8676, y: 30.262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653905550
@@ -4113,7 +4113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get to the sun rays to earn points!
+  m_text: Sentuh sinar-sinar matahari untuk mendapatkan poin!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -4140,8 +4140,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -24,7 +24,7 @@ namespace RC
 
         private void SetupPanel()
         {
-            titleText.text = $"{GameManager.instance.CurrentAnimal.Name}'s Happiness Meter";
+            titleText.text = $"Tingkat Kebahagiaan {GameManager.instance.CurrentAnimal.Name}";
 
             SetTexts(GameManager.instance.CurrentAnimal);
         }
@@ -67,26 +67,26 @@ namespace RC
 
         private void SetKomodoTexts()
         {
-            unlock25.text += "Unlock shop.";
-            unlock50.text += "Unlock Ajag.";
-            unlock75.text += "Increase passive income by 10 gold every minute.";
-            unlock100.text += "Unlock Komodo achievement.";
+            unlock25.text += "Membuka akses toko.";
+            unlock50.text += "Hewan Ajag diperoleh.";
+            unlock75.text += "Penghasilan pasif meningkat sebanyak 10 emas setiap menit.";
+            unlock100.text += "Mendapatkan achievement untuk Komodo.";
         }
 
         private void SetAjagTexts()
         {
             unlock25.gameObject.SetActive(false);
-            unlock50.text += "Unlock Orang Utan.";
-            unlock75.text += "Increase passive income by 10 gold every minute.";
-            unlock100.text += "Unlock Ajag achievement.";
+            unlock50.text += "Hewan Orang Utan diperoleh.";
+            unlock75.text += "Penghasilan pasif meningkat sebanyak 10 emas setiap menit.";
+            unlock100.text += "Mendapatkan achievement untuk Ajag.";
         }
 
         private void SetOrangUtanTexts()
         {
             unlock25.gameObject.SetActive(false);
-            unlock50.text += "Increase passive income by 5 gold every minute.";
-            unlock75.text += "Increase passive income by 5 gold every minute.";
-            unlock100.text += "Unlock Orang Utan achievement.";
+            unlock50.text += "Penghasilan pasif meningkat sebanyak 5 emas setiap menit.";
+            unlock75.text += "Penghasilan pasif meningkat sebanyak 5 emas setiap menit.";
+            unlock100.text += "Mendapatkan achievement untuk Orang Utan.";
         }
     }
 }

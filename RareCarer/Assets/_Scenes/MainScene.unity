@@ -161,107 +161,115 @@ MonoBehaviour:
   closeButton: {fileID: 538401252}
   sectionButtons: {fileID: 1918247427}
   sections:
-  - title: Introduction
+  - title: Selamat datang!
     tutorialParts:
-    - text: Welcome to RareCarer!
+    - text: Selamat datang di RareCarer!
       image: {fileID: 0}
-    - text: This is a game where you take care of rare, Indonesian animals.
+    - text: Ini adalah sebuah game di mana kamu merawat hewan-hewan Indonesia yang
+        langka.
       image: {fileID: 0}
-    - text: We need to take care of them in several different ways.
+    - text: Kita perlu merawat mereka melalui berbagai macam cara.
       image: {fileID: 0}
-    - text: Let's get straight into it!
+    - text: Yuk kita pelajari cara-caranya!
       image: {fileID: 0}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Food
+  - title: Makanan
     tutorialParts:
-    - text: First, we need to feed the animals with the food that they like.
+    - text: Pertama-tama, kita perlu memberi mereka makanan yang mereka sukai.
       image: {fileID: 0}
-    - text: Click on the food icon here to open the food menu.
+    - text: Buka menu makanan melalui tombol makanan di bawah ini.
       image: {fileID: 21300000, guid: 520820550ea12d44f9bf2e3b9777187e, type: 3}
-    - text: Click on the food type to give it to the animal.
+    - text: Lalu, pilih tipe makanan yang akan diberikan kepada hewan.
       image: {fileID: 21300000, guid: 50f7ba570a7be1c449d34998bab7c93b, type: 3}
-    - text: This will increase the hunger bar above the food icon.
+    - text: Saat kita memberi makan, tingkat kelaparan mereka akan berkurang, yang
+        ditandai dengan naiknya status mereka di ikon ini.
       image: {fileID: 21300000, guid: 5a61f05d89719044e941bb681887a581, type: 3}
-    - text: Make sure to give them the appropriate foods or they won't be happy.
+    - text: Pastikan kita memberi mereka makanan yang mereka sukai, atau mereka tidak
+        akan senang dengan hal itu.
       image: {fileID: 21300000, guid: 03b96f6ddf0051643b641801ed0fcd32, type: 3}
-    - text: You can try giving different kinds of food to see which type of food
-        they like.
+    - text: Kamu bisa mencoba memberi mereka berbagai macam makanan untuk mengetahui
+        tipe makanan yang mereka sukai.
       image: {fileID: 21300000, guid: 43fd7ec13d6367a4785940e19df62400, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Shop
+  - title: Toko
     tutorialParts:
-    - text: You can unlock the shop once you reach a certain amount of happiness
-        on the first animal.
+    - text: Kamu bisa mengakses toko apabila tingkat kebahagiaan dari hewan pertama
+        sudah mencapai tahap tertentu.
       image: {fileID: 21300000, guid: ff476b467dabd2c499a1f15a88d31bec, type: 3}
-    - text: The shop is where you would buy food for the animals.
+    - text: Toko merupakan tempat untuk membeli makanan untuk hewan-hewan kita.
       image: {fileID: 21300000, guid: c3dbc0d2b9150044ca4b62c703bcb603, type: 3}
-    - text: Click on the food icons to select them
+    - text: Pilih tipe makanan yang akan dibeli di bagian samping.
       image: {fileID: 21300000, guid: 1d7872ba30642ee4c883ffded0e49e02, type: 3}
-    - text: Then click the Buy button to buy the selected food.
+    - text: Lalu, apabila sudah yakin, tekan tombol "Buy" untuk membeli makanan tersebut.
       image: {fileID: 21300000, guid: 7701848ca2353d747b46af909f26bac8, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Clean
+  - title: Membersihkan Hewan
     tutorialParts:
-    - text: Next, we sometimes need to clean the animal too.
+    - text: Selanjutnya, kita juga perlu membersihkan hewan-hewan tersebut.
       image: {fileID: 0}
-    - text: Overtime, they will slowly get dirty as the cleanliness bar goes down.
+    - text: Hewan-hewan tersebut lama kelamaan akan menjadi kotor apabila tidak diurus
+        dengan baik, yang ditandai dengan status ikon di bawah ini.
       image: {fileID: 21300000, guid: 73326f6b874d4e344b53e6ee8399868b, type: 3}
-    - text: Click on the clean icon and drag the sponge over the animal to clean
-        them.
+    - text: Klik tombol "Clean" dan tarik spons yang ada di menu ke atas hewan untuk
+        membersihkannya.
       image: {fileID: 21300000, guid: 80255912b815f104e8e6cf62fb29c10c, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Play
+  - title: Bermain dengan Hewan
     tutorialParts:
-    - text: Lastly, the animals need to have fun too.
+    - text: Terakhir, semua hewan perlu memiliki waktu bermain pula.
       image: {fileID: 0}
-    - text: Click the play icon and select the minigame icon inside.
+    - text: Klik tombol "Play" dan pilih ikon minigame yang ada di dalamnya.
       image: {fileID: 21300000, guid: 2f74d673f8426814ebc7c17c1334142c, type: 3}
-    - text: Each animals have their own unique minigames, so make sure to try all
-        of them out!
+    - text: Setiap hewan memiliki minigame-minigamenya tersendiri yang unik untuk
+        hewan itu. Jadi, pastikan untuk mencoba semua minigame yang ada!
       image: {fileID: 21300000, guid: 9a6c68c2311aac04085a16d109202ab6, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Happiness
+  - title: Tingkat Kebahagiaan Hewan
     tutorialParts:
-    - text: To increase the happiness of an animal, you must maintain the other stats,
-        which are the food, cleanliness, and play.
+    - text: Untuk meningkatkan tingkat kebahagiaan dari hewan, kamu perlu menjaga
+        status lainnya seperti makanan, kebersihan, dan bermain.
       image: {fileID: 21300000, guid: e4a430b62997d4d4cbdd2355b8dbef79, type: 3}
-    - text: You can see the happiness bar on the bottom left of the screen, next
-        to the heart icon.
+    - text: 'Kamu dapat melihat tingkat kebahagiaan saat ini melalui bar di sebelah
+        ikon hati. '
       image: {fileID: 21300000, guid: 49c78e20c324b5b4a8e0e724eb25aa2d, type: 3}
-    - text: Click on the heart icon to view the available unlockables once you reach
-        a certain amount of happiness.
+    - text: Kamu juga dapat menekan tombol hati untuk melihat apa saja yang dapat
+        kamu peroleh dengan meningkatkan kebahagiaan hewan.
       image: {fileID: 21300000, guid: 04005aa31ba07254e8ff8612ab78db70, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Changing Animals
+  - title: Mengganti Hewan
     tutorialParts:
-    - text: Once you unlock more animals, you can change the current animal by clicking
-        on the left or right button here.
+    - text: Setelah memperoleh lebih banyak hewan, kamu bisa berpindah ke hewan lainnya
+        melalui tombol anak panah di kiri atau kanan layar.
+      image: {fileID: 21300000, guid: acb613882dc38f448b36d9c0dde2ab00, type: 3}
+    - text: Setiap hewan memiliki statusnya sendiri, sehingga jangan lupa untuk merawat
+        hewan-hewan sebelumnya pula.
       image: {fileID: 21300000, guid: acb613882dc38f448b36d9c0dde2ab00, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
     currentPartIndex: 0
-  - title: Info Button
+  - title: Tombol Informasi
     tutorialParts:
-    - text: If you want to view the tutorials again, click on the info icon here.
+    - text: Apabila kamu ingin melihat tutorial ini lagi, kamu bisa mengaksesnya
+        melalui tombol info ini.
       image: {fileID: 21300000, guid: c684777d425d8ea4ca373983a1562c49, type: 3}
     currentPart:
       text: 
@@ -9187,32 +9195,32 @@ MonoBehaviour:
     amount: 0
     price: 10
     sprite: {fileID: 21300000, guid: b7d5a573924ef2b47bb490683a1ac2f3, type: 3}
-    description: Insects
+    description: Berbagai macam serangga.
   - type: Meat
     amount: 0
     price: 30
     sprite: {fileID: 21300000, guid: 33c8059bdf348a647b89f25298da0580, type: 3}
-    description: meaty
+    description: Daging mentah.
   - type: Fruit
     amount: 0
     price: 20
     sprite: {fileID: 21300000, guid: cab6d672d13773c4c854defad56414ae, type: 3}
-    description: fruity
+    description: Berbagai macam buah-buahan.
   - type: Vegetable
     amount: 0
     price: 20
     sprite: {fileID: 21300000, guid: 8f591653604872c4c9cb4580129bffbe, type: 3}
-    description: vegetable
+    description: Sayur-sayuran.
   - type: Bone
     amount: 0
     price: 10
     sprite: {fileID: 21300000, guid: d42d2a81231f7fd4fb02d74678d1c31f, type: 3}
-    description: bone
+    description: Tulang-tulang.
   - type: Leaves
     amount: 0
     price: 15
     sprite: {fileID: 21300000, guid: 0a77389fadd4d0d4e8ecd75537d95351, type: 3}
-    description: leaves
+    description: Dedaunan.
   switchAnimal: {fileID: 1217402242}
   OnLoadSave:
     m_PersistentCalls:

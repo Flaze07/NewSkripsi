@@ -389,7 +389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Maintain speed to get to the prey!
+  m_text: Pertahankan kecepatan untuk mencapai mangsa!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -539,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.900038, y: -87.9}
+  m_AnchoredPosition: {x: 26.900038, y: -93}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69162341
@@ -2924,7 +2924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Or
+  m_text: atau
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -2951,8 +2951,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3283,7 +3283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.6, y: -87.9}
+  m_AnchoredPosition: {x: -43.6, y: -93}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494989185
@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Switch positions when the stamina bar is low by clicking the cards
+  m_text: Ganti posisi apabila stamina rendah dengan menekan kartu-kartu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -4163,7 +4163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.099962, y: -87.9}
+  m_AnchoredPosition: {x: -8.099962, y: -93}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649635199
@@ -4448,7 +4448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85}
+  m_AnchoredPosition: {x: 0, y: 106.8}
   m_SizeDelta: {x: -50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &748217414
@@ -4471,8 +4471,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ajags hunt in packs. They will each take a turn to lead the pack, switching
-    everytime they are tired.
+  m_text: Ajag berburu secara berkelompok. Mereka masing-masing mengambil giliran
+    untuk memimpin kelompok dan hanya gantian apabila mereka merasa lelah.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -4681,7 +4681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Avoid rocks and branches!
+  m_text: Hindari batu dan dahan pohon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -7218,7 +7218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jump
+  m_text: Lompat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -9148,7 +9148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: -16.362}
   m_SizeDelta: {x: -50, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1804144232
@@ -9348,7 +9348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Duck
+  m_text: Menunduk
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -9963,7 +9963,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Or
+  m_text: atau
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
   m_sharedMaterial: {fileID: 5410281198700658701, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
@@ -9990,8 +9990,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -1367,15 +1367,15 @@ MonoBehaviour:
   - unlocked: 0
     achievementIcon: {fileID: 21300000, guid: 0901ac9dcbd75254ba30ec11fb55983d, type: 3}
     achievementName: Komodo's Love
-    achievementDescription: Reach 100% happiness with the Komodo
+    achievementDescription: Tingkat kebahagiaan Komodo mencapai 100%
   - unlocked: 0
     achievementIcon: {fileID: 21300000, guid: 5d1f152c582921747bfdd3fab14147ad, type: 3}
     achievementName: Ajag's Love
-    achievementDescription: Reach 100% happiness with the Ajag
+    achievementDescription: Tingkat kebahagiaan Ajag mencapai 100%
   - unlocked: 0
     achievementIcon: {fileID: 21300000, guid: 658ebf32ab236e146a66587afb7277fc, type: 3}
     achievementName: Orang Utan's Love
-    achievementDescription: Reach 100% happiness with the Orang Utan
+    achievementDescription: Tingkat kebahagiaan Orang Utan mencapai 100%
 --- !u!4 &1656936832
 Transform:
   m_ObjectHideFlags: 0
