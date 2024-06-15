@@ -33,6 +33,7 @@ namespace RC
 
         public void LoadScene(string sceneName)
         {
+            GameManager.instance.SaveData();
             SceneManager.LoadScene(sceneName);
         }
     }

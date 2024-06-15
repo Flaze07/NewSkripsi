@@ -25,6 +25,7 @@ namespace RC
 
         private void Start()
         {
+            firstTime = PlayerPrefs.GetInt("Animal Count", -1) == -1;
             if (firstTime)
             {
                 panel.SetActive(true);
