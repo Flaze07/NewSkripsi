@@ -156,9 +156,12 @@ namespace RC
 
             if (ajagAnimal.Happiness > 50f)
             {
-                orangUtanAnimal.Unlock();
-                OpenAnimalunlockPanel("Orang Utan");
-                ajagUnlock[1] = true;
+                if(ajagUnlock[1] != true)
+                {
+                    orangUtanAnimal.Unlock();
+                    OpenAnimalunlockPanel("Orang Utan");
+                    ajagUnlock[1] = true;
+                }
             }
 
             if (ajagAnimal.Happiness > 75f)

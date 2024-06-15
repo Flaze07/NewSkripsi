@@ -228,7 +228,10 @@ namespace RC.Swinging3
             }
             GameManager.instance.CurrentAnimal.Play += 30;
             AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
-            minigameComp.UnlockedMinigames[0].starAchieved = star;
+            if(star > minigameComp.UnlockedMinigames[0].starAchieved)
+            {
+                minigameComp.UnlockedMinigames[0].starAchieved = star;
+            }
             gameEnded = true;
         }
 

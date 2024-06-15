@@ -79,6 +79,11 @@ namespace RC.Sunbath
             {
                 GameEnd();
             }
+
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                IncreaseScore(10);
+            }
         }
 
         private void GameEnd()
@@ -88,7 +93,7 @@ namespace RC.Sunbath
             int star = 0;
             if (score >= 100)
             {
-                GameManager.instance.Currency += 10;
+                GameManager.instance.Currency += 30;
                 star = 3;
             }
             else if (score >= 60)
@@ -98,13 +103,16 @@ namespace RC.Sunbath
             }
             else if (score>=20)
             {
-                GameManager.instance.Currency += 30;
+                GameManager.instance.Currency += 10;
                 star = 1;
             }
             
             GameManager.instance.CurrentAnimal.Play += 30;
             AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
-            minigameComp.UnlockedMinigames[0].starAchieved = star;
+            if(star > minigameComp.UnlockedMinigames[0].starAchieved)
+            {
+                minigameComp.UnlockedMinigames[0].starAchieved = star;
+            }
 
             gameEnded = true;
         }

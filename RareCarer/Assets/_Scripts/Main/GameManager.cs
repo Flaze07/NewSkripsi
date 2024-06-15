@@ -55,7 +55,6 @@ namespace RC
             set
             {
                 currency = value;
-                currencyText.text = "Currency: " + currency.ToString();
             }
         }
         private int passiveIncome = 0;
@@ -92,7 +91,6 @@ namespace RC
                 DontDestroyOnLoad(this.gameObject);
             }
             StartCoroutine(LateStart());
-            SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => FindCurrencyText();
         }
 
         IEnumerator LateStart()

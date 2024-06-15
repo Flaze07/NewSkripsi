@@ -13,7 +13,8 @@ public class MinigamePanel : MonoBehaviour
     private GameObject minigameButtonParent;
     [SerializeField]
     private GameObject minigameButtonPrefab;
-
+    [SerializeField]
+    private Sprite star;
     void OnEnable()
     {
         var animalMinigame = GameManager.instance.CurrentAnimal.GetComponent<AnimalMinigame>();
@@ -27,6 +28,12 @@ public class MinigamePanel : MonoBehaviour
             btn.onClick.AddListener(() => {
                 SceneManager.LoadScene(minigame.MinigameSceneName);
             });
+
+            for(int i = 0; i < minigame.starAchieved; ++i)
+            {
+                var child = minigameButton.transform.GetChild(i).GetComponent<Image>();
+                child.sprite = star;
+            }
         }
     }
 
