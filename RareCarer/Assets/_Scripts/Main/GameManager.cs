@@ -120,8 +120,10 @@ namespace RC
             passiveIncomeTimer += Time.deltaTime;
             if(passiveIncomeTimer >=60f)
             {
+                Debug.Log($"Before passive income: {currency} | income = {passiveIncome}");
                 passiveIncomeTimer -= 60f;
                 currency += passiveIncome;
+                Debug.Log($"After passive income: {currency} | income = {passiveIncome}");
             }
         }
 
