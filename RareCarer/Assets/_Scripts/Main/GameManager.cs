@@ -96,6 +96,18 @@ namespace RC
         IEnumerator LateStart()
         {
             yield return new WaitForEndOfFrame();
+            if(PlayerPrefs.HasKey("Animal Count"))
+            {
+                LoadData();
+            }
+            else
+            {
+                InitializeData();
+            }
+        }
+
+        void InitializeData()
+        {
             availableAnimals.Add(AnimalParent.instance.Animals[0]);
             currentAnimal = availableAnimals[0];
         }
@@ -156,6 +168,12 @@ namespace RC
             currentAnimal = availableAnimals[nextIdx];
             OnAnimalSwitch?.Invoke(currentAnimal);
         }
+
+        void OnApplicationQuit()
+        {
+            SaveData();
+        }
+
         public void SaveData()
         {
             PlayerPrefs.SetInt("Animal Count", availableAnimals.Count);
@@ -183,6 +201,39 @@ namespace RC
             for(int i = 0; i < achievements.Count; ++i)
             {
                 PlayerPrefs.SetInt($"Achievement {i} unlocked", achievements[i].unlocked ? 1 : 0);
+            }
+        }
+
+        public void LoadData()
+        {
+            int animalCount = PlayerPrefs.GetInt("Animal Count");
+            availableAnimals.Clear();
+            for(int i = 0; i < animalCount; ++i)
+            {
+                var animal = AnimalParent.instance.Animals[i];
+                animal.Happiness = PlayerPrefs.GetFloat($"Animal {i} happiness");
+                animal.Hunger = PlayerPrefs.GetFloat($"Animal {i} hunger");
+                animal.Cleanliness = PlayerPrefs.GetFloat($"Animal {i} cleanliness");
+                animal.Play = PlayerPrefs.GetFloat($"Animal {i} play");
+                availableAnimals.Add(animal);
+
+                var minigames = animal.gameObject.GetComponent<AnimalMinigame>();
+                var minigameData = minigames.UnlockedMinigames;
+                minigameData[0].starAchieved = PlayerPrefs.GetInt($"Animal {i} minigame star");
+            }
+
+            currency = PlayerPrefs.GetInt("Currency");
+
+            Foods.ForEach(food =>
+            {
+                food.Amount = PlayerPrefs.GetInt($"Food {food.Type} amount");
+            });
+
+            var achievementManager = AchievementManager.instance;
+            var achievements = achievementManager.AchievementList;
+            for(int i = 0; i < achievements.Count; ++i)
+            {
+                achievements[i].unlocked = PlayerPrefs.GetInt($"Achievement {i} unlocked") == 1;
             }
         }
     }
