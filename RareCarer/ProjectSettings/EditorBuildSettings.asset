@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MainMenuScene.unity
     guid: 76617f62639246041a4ada3801857eb7
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/Hunting.unity
+    guid: 0e6926e566ed81748a58b79028ef1c00
   m_configObjects: {}

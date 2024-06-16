@@ -74,12 +74,6 @@ namespace RC
 
         private void KomodoUnlocks()
         {
-            //shop button 
-            if (komodoAnimal.Happiness >= 25f)
-            {
-                shopButton.interactable = true;
-                komodoUnlock[0] = true;
-            }
 
             //unlock ajag
             if(komodoAnimal.Happiness >= 50f)
