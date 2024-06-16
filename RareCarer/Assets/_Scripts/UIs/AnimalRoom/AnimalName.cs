@@ -21,7 +21,7 @@ namespace RC
 
         private void ChangeNameToCurrent(Animal animal)
         {
-            nameText.text = animal.Name;
+            nameText.text = animal.AnimalName;
         }
     }
 }

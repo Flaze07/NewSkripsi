@@ -7,6 +7,7 @@ namespace RC
 {
     public class UnlockManager : MonoBehaviour
     {
+        [SerializeField] AnimalParent animalparent;
         [SerializeField] private Animal komodoAnimal;
         [SerializeField] private Animal orangUtanAnimal;
         [SerializeField] private Animal ajagAnimal;
@@ -29,9 +30,37 @@ namespace RC
 
         void Update()
         {
-            KomodoUnlocks();
-            AjagUnlocks();
-            OrangUtanUnlocks();
+            if(animalparent != null)
+            {
+                KomodoUnlocks();
+                AjagUnlocks();
+                OrangUtanUnlocks();
+            }
+            else
+            {
+                SearchAnimalParent();
+            }
+        }
+
+        public void SearchAnimalParent()
+        {
+            animalparent = AnimalParent.instance;
+
+            for (int i = 0; i < animalparent.Animals.Count; i ++)
+            {
+                if (animalparent.Animals[i].AnimalName == "Komodo")
+                {
+                    komodoAnimal = animalparent.Animals[i];
+                }
+                else if (animalparent.Animals[i].AnimalName == "Ajag")
+                {
+                    ajagAnimal = animalparent.Animals[i];
+                }
+                else if (animalparent.Animals[i].AnimalName == "OrangUtan")
+                {
+                    orangUtanAnimal = animalparent.Animals[i];
+                }
+            }
         }
 
         public void LoadSave()

@@ -247,6 +247,29 @@ namespace RC
 
             OnLoadSave.Invoke();
         }
+
+
+        public void GiveCurrency(int totalStar)
+        {
+            int currency = 10;
+
+            if (totalStar >= 1)
+            {
+                currency += 15;
+            }
+
+            if (totalStar >= 2)
+            {
+                currency += 10;
+            }
+
+            if (totalStar >= 3)
+            {
+                currency += 5;
+            }
+
+            GameManager.instance.Currency += currency;
+        }
     }
 }
 

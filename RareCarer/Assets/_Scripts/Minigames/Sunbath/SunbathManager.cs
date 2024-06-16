@@ -91,33 +91,28 @@ namespace RC.Sunbath
             if(!gameEnded)
             {
                 gameEndPanel.SetActive(true);
-
-                Debug.Log(GameManager.instance.Currency);
                 int star = 0;
                 if (score >= 100)
                 {
-                    GameManager.instance.Currency += 30;
                     star = 3;
                 }
                 else if (score >= 60)
                 {
-                    GameManager.instance.Currency += 20;
                     star = 2;
                 }
                 else if (score >= 20)
                 {
-                    GameManager.instance.Currency += 10;
                     star = 1;
                 }
 
-                GameManager.instance.CurrentAnimal.Play += 30;
+                GameManager.instance.GiveCurrency(star);
+                GameManager.instance.CurrentAnimal.Play += 60;
                 AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
                 if (star > minigameComp.UnlockedMinigames[0].starAchieved)
                 {
                     minigameComp.UnlockedMinigames[0].starAchieved = star;
                 }
 
-                Debug.Log("test");
                 Debug.Log(GameManager.instance.Currency);
 
                 gameEnded = true;

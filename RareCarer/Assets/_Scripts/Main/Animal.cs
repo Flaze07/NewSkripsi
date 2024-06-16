@@ -11,8 +11,8 @@ namespace RC
     public class Animal : MonoBehaviour
     {
         [SerializeField]
-        private string name;
-        public string Name => name;
+        private string animalName;
+        public string AnimalName => animalName;
         [SerializeField]
         private List<string> likedFood;
         [SerializeField]
@@ -24,19 +24,19 @@ namespace RC
             set => happiness = value;
         
         }
-        private float hunger = 100;
+        private float hunger = 75;
         public float Hunger
         {
             get => hunger;
             set => hunger = value;
         }
-        private float cleanliness = 100;
+        private float cleanliness = 50;
         public float Cleanliness
         {
             get => cleanliness;
             set => cleanliness = value;
         }
-        private float play = 100;
+        private float play = 50;
         public float Play
         {
             get => play;
@@ -85,7 +85,12 @@ namespace RC
 
                 if(BarManager.instance != null && GameManager.instance.CurrentAnimal == this)
                 {
+                    Debug.Log(animalName + "||" + GameManager.instance.CurrentAnimal.AnimalName);
                     BarManager.instance.UpdateBar(this);
+                }
+                else
+                {
+                    Debug.Log(animalName + "||" + GameManager.instance.CurrentAnimal.AnimalName);
                 }
 
                 if(currentTimeReaction >= timeReaction)
@@ -122,12 +127,12 @@ namespace RC
 
             if (likedFood.Contains(foodType))
             {
-                hunger += 40;
+                hunger += 15;
                 happyReaction.SetActive(true);
             }
             else
             {
-                hunger += 10;
+                hunger += 6;
                 sadReaction.SetActive(true);
             }
         }
@@ -143,13 +148,13 @@ namespace RC
             if (!(hunger < 25 && cleanliness < 25 && play < 25))
             {
                 float before = happiness;
-                happiness += 10f * Time.deltaTime;
+                happiness += 0.375f * Time.deltaTime;
                 OnHappinessChange.Invoke(before, happiness);
             }
             else if (!(hunger > 50 && cleanliness > 50 && play > 50))
             {
                 float before = happiness;
-                happiness -= 0.15f * Time.deltaTime;
+                happiness -= 0.095f * Time.deltaTime;
                 OnHappinessChange.Invoke(before, happiness);
             }
 
@@ -171,7 +176,7 @@ namespace RC
 
         public void Unlock()
         {
-            unlocked = true;
+            unlocked = true;    
             GameManager.instance.AddAvailableAnimal(this);
         }
     }

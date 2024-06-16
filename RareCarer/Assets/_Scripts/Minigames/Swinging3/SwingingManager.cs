@@ -213,20 +213,19 @@ namespace RC.Swinging3
             // }
             if(score >= 15)
             {
-                GameManager.instance.Currency += 30;
                 star = 3;
             }
             else if(score >= 10)
             {
-                GameManager.instance.Currency += 20;
                 star = 2;
             }
             else if(score >= 5)
             {
-                GameManager.instance.Currency += 10;
                 star = 1;
             }
-            GameManager.instance.CurrentAnimal.Play += 30;
+
+            GameManager.instance.GiveCurrency(star);
+            GameManager.instance.CurrentAnimal.Play += 60;
             AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
             if(star > minigameComp.UnlockedMinigames[0].starAchieved)
             {

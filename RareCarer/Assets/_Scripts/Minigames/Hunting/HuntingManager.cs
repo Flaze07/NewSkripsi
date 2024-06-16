@@ -251,9 +251,9 @@ namespace RC.Hunting
             {
                 GameEndPanel.SetActive(true);
 
-                GameManager.instance.Currency += 10 * totalStar;
+                GameManager.instance.GiveCurrency(totalStar);
 
-                GameManager.instance.CurrentAnimal.Play += 30;
+                GameManager.instance.CurrentAnimal.Play += 60;
                 AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
                 if (totalStar > minigameComp.UnlockedMinigames[0].starAchieved)
                 {
@@ -264,6 +264,7 @@ namespace RC.Hunting
 
             }
         }
+
     }
 
 }

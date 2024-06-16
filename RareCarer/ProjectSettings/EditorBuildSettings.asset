@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Minigames/Hunting.unity
     guid: 0e6926e566ed81748a58b79028ef1c00
+  - enabled: 1
+    path: Assets/_Scenes/Minigames/Swinging3.unity
+    guid: 08457fcaec4ffdf4fbd5637fb52b7c8d
   m_configObjects: {}

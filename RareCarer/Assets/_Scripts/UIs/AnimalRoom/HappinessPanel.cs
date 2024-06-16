@@ -7,6 +7,7 @@ namespace RC
 {
     public class HappinessPanel : MonoBehaviour
     {
+        [SerializeField] AnimalParent animalparent;
         [SerializeField] private Animal komodoAnimal;
         [SerializeField] private Animal orangUtanAnimal;
         [SerializeField] private Animal ajagAnimal;
@@ -19,12 +20,39 @@ namespace RC
 
         private void OnEnable()
         {
+            if(animalparent == null)
+            {
+                SearchAnimalParent();
+            }
+
             SetupPanel();
+        }
+
+
+        public void SearchAnimalParent()
+        {
+            animalparent = AnimalParent.instance;
+
+            for (int i = 0; i < animalparent.Animals.Count; i++)
+            {
+                if (animalparent.Animals[i].AnimalName == "Komodo")
+                {
+                    komodoAnimal = animalparent.Animals[i];
+                }
+                else if (animalparent.Animals[i].AnimalName == "Ajag")
+                {
+                    ajagAnimal = animalparent.Animals[i];
+                }
+                else if (animalparent.Animals[i].AnimalName == "OrangUtan")
+                {
+                    orangUtanAnimal = animalparent.Animals[i];
+                }
+            }
         }
 
         private void SetupPanel()
         {
-            titleText.text = $"Tingkat Kebahagiaan {GameManager.instance.CurrentAnimal.Name}";
+            titleText.text = $"Tingkat Kebahagiaan {GameManager.instance.CurrentAnimal.AnimalName}";
 
             SetTexts(GameManager.instance.CurrentAnimal);
         }
@@ -67,7 +95,6 @@ namespace RC
 
         private void SetKomodoTexts()
         {
-            unlock25.text += "Membuka akses toko.";
             unlock50.text += "Hewan Ajag diperoleh.";
             unlock75.text += "Penghasilan pasif meningkat sebanyak 10 emas setiap menit.";
             unlock100.text += "Mendapatkan achievement untuk Komodo.";
