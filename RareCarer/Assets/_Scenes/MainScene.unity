@@ -17479,7 +17479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 03bcd5693a5f9a74ca3f2a2d33b31b21, type: 3}
       propertyPath: likedFood.Array.data[1]
-      value: Bones
+      value: Bone
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 03bcd5693a5f9a74ca3f2a2d33b31b21, type: 3}
       propertyPath: likedFood.Array.data[2]

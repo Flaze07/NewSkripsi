@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace RC.Hunting
 {
@@ -75,6 +76,8 @@ namespace RC.Hunting
         private int totalStar;
         public int TotalStar => totalStar;
 
+        private bool gameEnded = false;
+
         public float DamageCooldown => damageCooldown;
         private float damageCooldownCount = 0;
         public bool IsDamaged
@@ -97,6 +100,7 @@ namespace RC.Hunting
                 currentGameTime = gameTimer;
                 lowestDistance = distance;
                 GameEndPanel.SetActive(false);
+                gameEnded = false;
                 initialized = true;
             }
             else
@@ -243,7 +247,22 @@ namespace RC.Hunting
 
         public void GameEnd()
         {
-            GameEndPanel.SetActive(true);
+            if(!gameEnded)
+            {
+                GameEndPanel.SetActive(true);
+
+                GameManager.instance.Currency += 10 * totalStar;
+
+                GameManager.instance.CurrentAnimal.Play += 30;
+                AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
+                if (totalStar > minigameComp.UnlockedMinigames[0].starAchieved)
+                {
+                    minigameComp.UnlockedMinigames[0].starAchieved = totalStar;
+                }
+
+                gameEnded = true;
+
+            }
         }
     }
 

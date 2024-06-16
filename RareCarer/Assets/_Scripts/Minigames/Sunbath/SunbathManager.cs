@@ -88,33 +88,40 @@ namespace RC.Sunbath
 
         private void GameEnd()
         {
-            gameEndPanel.SetActive(true);
-            
-            int star = 0;
-            if (score >= 100)
+            if(!gameEnded)
             {
-                GameManager.instance.Currency += 30;
-                star = 3;
-            }
-            else if (score >= 60)
-            {
-                GameManager.instance.Currency += 20;
-                star = 2;
-            }
-            else if (score>=20)
-            {
-                GameManager.instance.Currency += 10;
-                star = 1;
-            }
-            
-            GameManager.instance.CurrentAnimal.Play += 30;
-            AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
-            if(star > minigameComp.UnlockedMinigames[0].starAchieved)
-            {
-                minigameComp.UnlockedMinigames[0].starAchieved = star;
-            }
+                gameEndPanel.SetActive(true);
 
-            gameEnded = true;
+                Debug.Log(GameManager.instance.Currency);
+                int star = 0;
+                if (score >= 100)
+                {
+                    GameManager.instance.Currency += 30;
+                    star = 3;
+                }
+                else if (score >= 60)
+                {
+                    GameManager.instance.Currency += 20;
+                    star = 2;
+                }
+                else if (score >= 20)
+                {
+                    GameManager.instance.Currency += 10;
+                    star = 1;
+                }
+
+                GameManager.instance.CurrentAnimal.Play += 30;
+                AnimalMinigame minigameComp = GameManager.instance.CurrentAnimal.gameObject.GetComponent<AnimalMinigame>();
+                if (star > minigameComp.UnlockedMinigames[0].starAchieved)
+                {
+                    minigameComp.UnlockedMinigames[0].starAchieved = star;
+                }
+
+                Debug.Log("test");
+                Debug.Log(GameManager.instance.Currency);
+
+                gameEnded = true;
+            }
         }
 
         public void IncreaseScore(float amount)
