@@ -104,7 +104,7 @@ namespace RC
             }
             else
             {
-                if (komodoUnlock[2] != true)
+                if (komodoUnlock[2] == true)
                 {
                     GameManager.instance.PassiveIncome -= 10;
                     komodoUnlock[2] = false;
