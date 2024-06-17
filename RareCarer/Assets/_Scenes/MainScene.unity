@@ -230,11 +230,13 @@ MonoBehaviour:
     tutorialParts:
     - text: Terakhir, semua hewan perlu memiliki waktu bermain pula.
       image: {fileID: 0}
-    - text: Klik tombol "Play" dan pilih ikon minigame yang ada di dalamnya.
+    - text: Klik tombol "Play" di sini.
       image: {fileID: 21300000, guid: 2f74d673f8426814ebc7c17c1334142c, type: 3}
+    - text: Lalu, pilih ikon minigame yang ada di dalamnya.
+      image: {fileID: 21300000, guid: 9a6c68c2311aac04085a16d109202ab6, type: 3}
     - text: Setiap hewan memiliki minigame-minigamenya tersendiri yang unik untuk
         hewan itu. Jadi, pastikan untuk mencoba semua minigame yang ada!
-      image: {fileID: 21300000, guid: 9a6c68c2311aac04085a16d109202ab6, type: 3}
+      image: {fileID: 21300000, guid: a9325f8dd38876e4793b37cdd95c0bd4, type: 3}
     currentPart:
       text: 
       image: {fileID: 0}
@@ -15352,8 +15354,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

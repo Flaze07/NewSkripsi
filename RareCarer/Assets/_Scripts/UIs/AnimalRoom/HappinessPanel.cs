@@ -95,6 +95,7 @@ namespace RC
 
         private void SetKomodoTexts()
         {
+            unlock25.gameObject.SetActive(false);
             unlock50.text += "Hewan Ajag diperoleh.";
             unlock75.text += "Penghasilan pasif meningkat sebanyak 10 emas setiap menit.";
             unlock100.text += "Mendapatkan achievement untuk Komodo.";
