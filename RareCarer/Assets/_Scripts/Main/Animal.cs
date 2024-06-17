@@ -100,7 +100,7 @@ namespace RC
                 }
                 else
                 {
-                    timeReaction += Time.deltaTime;
+                    currentTimeReaction += Time.deltaTime;
                 }
             }
         }
