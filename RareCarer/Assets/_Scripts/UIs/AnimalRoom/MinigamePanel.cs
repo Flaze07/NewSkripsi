@@ -15,6 +15,10 @@ public class MinigamePanel : MonoBehaviour
     private GameObject minigameButtonPrefab;
     [SerializeField]
     private Sprite star;
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip buttonAudioClip;
     void OnEnable()
     {
         var animalMinigame = GameManager.instance.CurrentAnimal.GetComponent<AnimalMinigame>();
@@ -26,6 +30,7 @@ public class MinigamePanel : MonoBehaviour
             image.sprite = minigame.MinigameIcon;
             Button btn = minigameButton.GetComponent<Button>();
             btn.onClick.AddListener(() => {
+                audioSource.PlayOneShot(buttonAudioClip);
                 SceneManager.LoadScene(minigame.MinigameSceneName);
             });
 

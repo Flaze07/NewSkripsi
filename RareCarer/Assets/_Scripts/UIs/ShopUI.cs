@@ -28,6 +28,11 @@ namespace RC
         [SerializeField]
         private TMPro.TextMeshProUGUI coinCost;
 
+        [SerializeField]
+        private AudioSource audioSource;
+        [SerializeField]
+        private AudioClip buttonAudioClip;
+
         private Food selectedItem;
 
         void Start()
@@ -84,6 +89,8 @@ namespace RC
             ownedText.text = "Owned : " + GameManager.instance.Foods.Find(f => f.Type == selectedItem.Type).Amount;
             descriptionTitle.text = food.Description;
             coinCost.text = food.Price.ToString();
+
+            audioSource.PlayOneShot(buttonAudioClip);
         }
     }
 

@@ -89,6 +89,14 @@ namespace RC.Hunting
         }
 
         private bool initialized;
+
+        [SerializeField]
+        private AudioSource audioSource;
+        [SerializeField]
+        private AudioClip changeSound;
+        [SerializeField]
+        private AudioClip damagedSound;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -218,6 +226,7 @@ namespace RC.Hunting
             StartCoroutine(AnimateChangeAjag(mainAjag.transform, ajag.transform));
             ajag.UpdatePos(mainAjag.CurrentPos);
             mainAjag = ajag;
+            audioSource.PlayOneShot(changeSound);
         }
 
         private IEnumerator AnimateChangeAjag(Transform from, Transform to)
@@ -243,6 +252,7 @@ namespace RC.Hunting
         public void AjagDamaged()
         {
             damageCooldownCount = damageCooldown;
+            audioSource.PlayOneShot(damagedSound);
         }
 
         public void GameEnd()

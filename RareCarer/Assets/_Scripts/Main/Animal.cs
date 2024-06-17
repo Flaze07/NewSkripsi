@@ -85,12 +85,12 @@ namespace RC
 
                 if(BarManager.instance != null && GameManager.instance.CurrentAnimal == this)
                 {
-                    Debug.Log(animalName + "||" + GameManager.instance.CurrentAnimal.AnimalName);
+                    //Debug.Log(animalName + "||" + GameManager.instance.CurrentAnimal.AnimalName);
                     BarManager.instance.UpdateBar(this);
                 }
                 else
                 {
-                    Debug.Log(animalName + "||" + GameManager.instance.CurrentAnimal.AnimalName);
+                    //Debug.Log(animalName + "||" + GameManager.instance.CurrentAnimal.AnimalName);
                 }
 
                 if(currentTimeReaction >= timeReaction)

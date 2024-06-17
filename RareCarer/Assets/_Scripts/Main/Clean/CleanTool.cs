@@ -20,10 +20,16 @@ public class CleanTool : MonoBehaviour
     private Animal animal;
     private SpriteRenderer animalSpriteRenderer;
     private Vector3 prevMousePos;
-    public void Initialize(Canvas canvas)
+
+    private AudioSource audioSource;
+    private AudioClip[] brushingSounds;
+    private bool soundIsPlaying;
+    public void Initialize(Canvas canvas, AudioSource audioSource, AudioClip[] audioClips)
     {
         this.canvas = canvas;
         prevMousePos = Input.mousePosition;
+        this.audioSource = audioSource;
+        brushingSounds = audioClips;
     }
     void Update()
     {
@@ -78,11 +84,19 @@ public class CleanTool : MonoBehaviour
             var diffScalar = diff.magnitude;
             var cleanPercent = diffScalar * cleanPercentage;
             animal.Cleanliness = Mathf.Clamp(animal.Cleanliness + cleanPercent, 0, 110);
-            
+                if (!soundIsPlaying) StartCoroutine(PlaySound());
         }
         prevMousePos = Input.mousePosition;
     }
-}
+
+        private IEnumerator PlaySound()
+        {
+            soundIsPlaying = true;
+            audioSource.PlayOneShot(brushingSounds[UnityEngine.Random.Range(0, brushingSounds.Length)]);
+            yield return new WaitForSeconds(0.4f);
+            soundIsPlaying = false;
+        }
+    }
 
 }
 

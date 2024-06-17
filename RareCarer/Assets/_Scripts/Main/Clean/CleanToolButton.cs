@@ -13,6 +13,11 @@ public class CleanToolButton : MonoBehaviour, IPointerDownHandler
     [SerializeField]
     private CleanTool cleanTool;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip[] brushingSounds;
+
     public void OnPointerDown(PointerEventData eventData)
     {
         SpawnCleanTool();
@@ -23,7 +28,7 @@ public class CleanToolButton : MonoBehaviour, IPointerDownHandler
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out Vector2 pos);
         CleanTool tool = Instantiate(cleanTool, canvas.transform);
-        tool.Initialize(canvas);
+        tool.Initialize(canvas, audioSource, brushingSounds);
         tool.transform.position = canvas.transform.TransformPoint(pos + tool.Offset);
     }
 }

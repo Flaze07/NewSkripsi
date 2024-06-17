@@ -12,6 +12,12 @@ public class FoodPanel : MonoBehaviour
     private FoodConsumable foodConsumablePrefab;
     [SerializeField]
     private GameObject foodConsumableParent;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip eatingAudioClip;
+
     void OnEnable()
     {
         // create a new food consumable for each food item in the food manager
@@ -29,6 +35,7 @@ public class FoodPanel : MonoBehaviour
                 GameManager.instance.CurrentAnimal.Feed(food.Type);
                 food.Amount--;
                 foodConsumable.SetFoodCount(food.Amount);
+                audioSource.PlayOneShot(eatingAudioClip);
             });
         }
     }
