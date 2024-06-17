@@ -163,7 +163,7 @@ namespace RC
 
         private void UpdateStats()
         {
-            float decreaseRatePersec = 0.4f;
+            float decreaseRatePersec = 0.1f;
 
             hunger -= Time.deltaTime * decreaseRatePersec;
             cleanliness -= Time.deltaTime * decreaseRatePersec;

@@ -182,7 +182,7 @@ namespace RC
             }
 
             //achievement
-            if (orangUtanAnimal.Happiness > 100f)
+            if (orangUtanAnimal.Happiness >= 100f)
             {
                 orangUtanUnlock[3] = true;
                 AchievementManager.instance.UnlockAchievement("Orang Utan's Love");
@@ -219,7 +219,7 @@ namespace RC
                 }
             }
 
-            if (ajagAnimal.Happiness > 100f)
+            if (ajagAnimal.Happiness >= 100f)
             {
                 ajagUnlock[3] = true;
                 AchievementManager.instance.UnlockAchievement("Ajag's Love");
