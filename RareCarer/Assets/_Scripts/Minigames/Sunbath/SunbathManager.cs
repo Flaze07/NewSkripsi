@@ -27,7 +27,7 @@ namespace RC.Sunbath
         private GameObject star3;
 
         [SerializeField]
-        private float timeLimit = 60f;
+        private float timeLimit = 5f;
         [SerializeField]
         private GameObject gameEndPanel;
         [SerializeField]
@@ -113,7 +113,7 @@ namespace RC.Sunbath
                     minigameComp.UnlockedMinigames[0].starAchieved = star;
                 }
 
-                Debug.Log(GameManager.instance.Currency);
+                this.gameObject.SetActive(false);
 
                 gameEnded = true;
             }
@@ -121,25 +121,28 @@ namespace RC.Sunbath
 
         public void IncreaseScore(float amount)
         {
-            score += amount;
-            if (score >= 20)
+            if(gameEnded == false)
             {
-                //star1.SetActive(true);
-                star1.GetComponent<Image>().sprite = starAchievedSprite;
+                score += amount;
+                if (score >= 20)
+                {
+                    //star1.SetActive(true);
+                    star1.GetComponent<Image>().sprite = starAchievedSprite;
+                }
+                if (score >= 60)
+                {
+                    //star2.SetActive(true);
+                    star2.GetComponent<Image>().sprite = starAchievedSprite;
+                }
+                if (score >= 99)
+                {
+                    //star3.SetActive(true);
+                    star3.GetComponent<Image>().sprite = starAchievedSprite;
+                }
+                score = Mathf.Min(Mathf.Max(score, 0), 100);
+                ;
+                bar.ChangeProgress(score);
             }
-            if (score >= 60)
-            {
-                //star2.SetActive(true);
-                star2.GetComponent<Image>().sprite = starAchievedSprite;
-            }
-            if (score >= 99)
-            {
-                //star3.SetActive(true);
-                star3.GetComponent<Image>().sprite = starAchievedSprite;
-            }
-            score = Mathf.Min(Mathf.Max(score, 0),100);
-;
-            bar.ChangeProgress(score);
         }
     }
 
