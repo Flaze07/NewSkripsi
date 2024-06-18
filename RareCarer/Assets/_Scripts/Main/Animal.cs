@@ -77,6 +77,7 @@ namespace RC
         // Update is called once per frame
         public void AnimalUpdate()
         {
+            //Debug.Log($"Are you unlocked {animalName}? {unlocked}");
             if(unlocked)
             {
                 UpdateHappiness();
@@ -149,13 +150,15 @@ namespace RC
             {
                 float before = happiness;
                 happiness += 0.375f * Time.deltaTime;
-                OnHappinessChange.Invoke(before, happiness);
+                //Debug.Log(animalName + " Persistent event count = " + OnHappinessChange.GetPersistentEventCount());
+                if(OnHappinessChange.GetPersistentEventCount() > 0) OnHappinessChange.Invoke(before, happiness);
             }
             else if (!(hunger > 50 && cleanliness > 50 && play > 50))
             {
                 float before = happiness;
                 happiness -= 0.095f * Time.deltaTime;
-                OnHappinessChange.Invoke(before, happiness);
+                //Debug.Log(animalName + " Persistent event count = " + OnHappinessChange.GetPersistentEventCount());
+                if (OnHappinessChange.GetPersistentEventCount() > 0) OnHappinessChange.Invoke(before, happiness);
             }
 
             happiness = MathF.Min(MathF.Max(happiness, 0), 100f);

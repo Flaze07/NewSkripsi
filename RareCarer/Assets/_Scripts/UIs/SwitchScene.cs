@@ -10,6 +10,7 @@ public class SwitchScene : MonoBehaviour
 {
     public void SwitchToScene(string sceneName)
     {
+        GameManager.instance.SaveData();
         SceneManager.LoadScene(sceneName);
     }
 }

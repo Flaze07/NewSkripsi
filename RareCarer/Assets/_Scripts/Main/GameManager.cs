@@ -101,10 +101,12 @@ namespace RC
             yield return new WaitForEndOfFrame();
             if(PlayerPrefs.HasKey("Animal Count"))
             {
+                Debug.Log("Loading data");
                 LoadData();
             }
             else
             {
+                Debug.Log("Init data");
                 InitializeData();
             }
         }
@@ -129,16 +131,17 @@ namespace RC
         {
             for (int i = 0; i < availableAnimals.Count; i++)
             {
+                //Debug.Log($"Updating index {i} out of {availableAnimals.Count}");
                 availableAnimals[i].AnimalUpdate();
             }
 
             passiveIncomeTimer += Time.deltaTime;
             if(passiveIncomeTimer >=60f)
             {
-                Debug.Log($"Before passive income: {currency} | income = {passiveIncome}");
+                //Debug.Log($"Before passive income: {currency} | income = {passiveIncome}");
                 passiveIncomeTimer -= 60f;
                 currency += passiveIncome;
-                Debug.Log($"After passive income: {currency} | income = {passiveIncome}");
+                //Debug.Log($"After passive income: {currency} | income = {passiveIncome}");
             }
         }
 
@@ -217,14 +220,17 @@ namespace RC
         {
             int animalCount = PlayerPrefs.GetInt("Animal Count");
             availableAnimals.Clear();
+            if (animalCount > 3) animalCount = 3;
             for(int i = 0; i < animalCount; ++i)
             {
+                Debug.Log(i + ". Animal count = " + animalCount);
                 var animal = AnimalParent.instance.Animals[i];
                 animal.Happiness = PlayerPrefs.GetFloat($"Animal {i} happiness");
                 animal.Hunger = PlayerPrefs.GetFloat($"Animal {i} hunger");
                 animal.Cleanliness = PlayerPrefs.GetFloat($"Animal {i} cleanliness");
                 animal.Play = PlayerPrefs.GetFloat($"Animal {i} play");
-                availableAnimals.Add(animal);
+                animal.Unlock();
+                //availableAnimals.Add(animal);
 
                 var minigames = animal.gameObject.GetComponent<AnimalMinigame>();
                 var minigameData = minigames.UnlockedMinigames;

@@ -26,6 +26,7 @@ namespace RC
         private void Start()
         {
             firstTime = PlayerPrefs.GetInt("Animal Count", -1) == -1;
+            Debug.Log($"First time = {firstTime}, animal count = {PlayerPrefs.GetInt("Animal Count", -1)}");
             if (firstTime)
             {
                 panel.SetActive(true);

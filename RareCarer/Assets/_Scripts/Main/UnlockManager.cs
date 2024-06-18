@@ -25,7 +25,7 @@ namespace RC
 
         void Start()
         {
-
+            LoadSave();
         }
 
         void Update()
@@ -76,6 +76,7 @@ namespace RC
             {
                 komodoUnlock[1] = true;
             }
+            Debug.Log("Animal unlocks loaded!");
         }
 
         public void CloseShopUnlockPanel()
@@ -92,6 +93,7 @@ namespace RC
         {
             animalUnlockPanel.SetActive(true);
             animalUnlockPanelName.text = animal;
+            Debug.Log("Opening animal unlock panel");
         }
 
         public void OpenShopUnlockPanel()
