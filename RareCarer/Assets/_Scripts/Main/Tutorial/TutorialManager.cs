@@ -16,6 +16,7 @@ namespace RC
         [SerializeField] private GameObject nextButton;
         [SerializeField] private GameObject closeButton;
         [SerializeField] private GameObject sectionButtons;
+        [SerializeField] private GameObject skipButton;
 
         [SerializeField] private List<TutorialSection> sections;
 
@@ -30,6 +31,7 @@ namespace RC
             if (firstTime)
             {
                 panel.SetActive(true);
+                skipButton.SetActive(true);
                 currentSectionIndex = 0;
                 currentSection = sections[currentSectionIndex];
                 currentSection.GoToPart(0);
@@ -42,6 +44,7 @@ namespace RC
                 panel.SetActive(false);
                 closeButton.SetActive(true);
                 sectionButtons.SetActive(true);
+                skipButton.SetActive(false);
                 HideAll();
             }
         }
@@ -61,6 +64,7 @@ namespace RC
             title.text = string.Empty;
             description.text = string.Empty;
             image.gameObject.SetActive(false);
+            skipButton.SetActive(false);
         }
 
         private void Setup()
@@ -74,6 +78,10 @@ namespace RC
             if (currentSection.IsEnd() && IsEnd())
             {
                 nextButton.SetActive(false);
+                //for the first timers
+                closeButton.SetActive(true);
+                skipButton.SetActive(false);
+                firstTime = false;
             }
 
             title.text = currentSection.title;
