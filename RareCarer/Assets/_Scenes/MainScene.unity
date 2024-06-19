@@ -9897,32 +9897,32 @@ MonoBehaviour:
   currencyText: {fileID: 550627407}
   currency: 100
   foods:
-  - type: Insect
+  - type: Serangga
     amount: 0
     price: 5
     sprite: {fileID: 21300000, guid: b7d5a573924ef2b47bb490683a1ac2f3, type: 3}
     description: Berbagai macam serangga.
-  - type: Meat
+  - type: Daging
     amount: 0
     price: 10
     sprite: {fileID: 21300000, guid: 33c8059bdf348a647b89f25298da0580, type: 3}
     description: Daging mentah.
-  - type: Fruit
+  - type: Buah-buahan
     amount: 0
     price: 10
     sprite: {fileID: 21300000, guid: cab6d672d13773c4c854defad56414ae, type: 3}
     description: Berbagai macam buah-buahan.
-  - type: Vegetable
+  - type: Sayur-sayuran
     amount: 0
     price: 10
     sprite: {fileID: 21300000, guid: 8f591653604872c4c9cb4580129bffbe, type: 3}
     description: Sayur-sayuran.
-  - type: Bone
+  - type: Tulang
     amount: 0
     price: 10
     sprite: {fileID: 21300000, guid: d42d2a81231f7fd4fb02d74678d1c31f, type: 3}
     description: Tulang-tulang.
-  - type: Leaves
+  - type: Dedaunan
     amount: 0
     price: 5
     sprite: {fileID: 21300000, guid: 0a77389fadd4d0d4e8ecd75537d95351, type: 3}
