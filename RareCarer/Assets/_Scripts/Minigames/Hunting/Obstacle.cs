@@ -8,7 +8,24 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-    public void Initialize(float speed)
+
+        private void OnEnable()
+        {
+            HuntingManager.OnGameEnd += Stop;
+        }
+
+        private void OnDisable()
+        {
+            HuntingManager.OnGameEnd += Stop;
+        }
+
+        private void Stop()
+        {
+            Initialize(0);
+        }
+
+
+        public void Initialize(float speed)
     {
         this.speed = speed;
     }

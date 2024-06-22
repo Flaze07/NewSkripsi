@@ -22,6 +22,16 @@ namespace RC.Hunting
         private float spawnDelay;
         private float spawnDelayTimer;
 
+        private void OnEnable()
+        {
+            HuntingManager.OnGameEnd += DisableSelf;
+        }
+
+        private void OnDisable()
+        {
+            HuntingManager.OnGameEnd -= DisableSelf;
+        }
+
         void Start()
         {
             spawnDelay = maxSpawnDelay;
@@ -50,6 +60,11 @@ namespace RC.Hunting
 
                 spawnDelayTimer += spawnDelay;
             }
+        }
+
+        private void DisableSelf()
+        {
+            gameObject.SetActive(false);
         }
     }
 

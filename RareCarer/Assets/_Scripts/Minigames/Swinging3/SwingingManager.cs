@@ -231,6 +231,7 @@ namespace RC.Swinging3
             {
                 minigameComp.UnlockedMinigames[0].starAchieved = star;
             }
+            this.gameObject.SetActive(false);
             gameEnded = true;
         }
 

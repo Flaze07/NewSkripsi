@@ -97,6 +97,8 @@ namespace RC.Hunting
         [SerializeField]
         private AudioClip damagedSound;
 
+        public static event Action OnGameEnd;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -269,9 +271,9 @@ namespace RC.Hunting
                 {
                     minigameComp.UnlockedMinigames[0].starAchieved = totalStar;
                 }
-
+                this.gameObject.SetActive(false);
                 gameEnded = true;
-
+                OnGameEnd?.Invoke();
             }
         }
 
