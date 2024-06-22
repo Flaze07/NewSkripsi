@@ -151,7 +151,7 @@ namespace RC
             if (!(hunger < 25 && cleanliness < 25 && play < 25))
             {
                 float before = happiness;
-                happiness += 0.375f * Time.deltaTime;
+                happiness += 0.1875f * Time.deltaTime;
                 OnHappinessChange.Invoke(before, happiness);
             }
             else if (!(hunger > 50 && cleanliness > 50 && play > 50))
@@ -166,7 +166,7 @@ namespace RC
 
         private void UpdateStats()
         {
-            float decreaseRatePersec = 0.1f;
+            float decreaseRatePersec = 0.2f;
 
             hunger -= Time.deltaTime * decreaseRatePersec;
             cleanliness -= Time.deltaTime * decreaseRatePersec;
