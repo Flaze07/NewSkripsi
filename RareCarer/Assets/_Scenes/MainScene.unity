@@ -17738,19 +17738,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[0]
-      value: Leaves
+      value: Dedaunan
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[1]
-      value: Fruit
+      value: Buah-buahan
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[2]
-      value: Insect
+      value: Serangga
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[3]
-      value: Vegetable
+      value: Sayur-sayuran
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[4]
@@ -18887,20 +18887,24 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
+      propertyPath: likedFood.Array.data[0]
+      value: Daging
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[1]
-      value: Leaves
+      value: Dedaunan
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[2]
-      value: Vegetable
+      value: Sayur-sayuran
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[3]
-      value: Bone
+      value: Tulang
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 1531289aae12b6a438a12a5ed3e68654, type: 3}
       propertyPath: likedFood.Array.data[4]
-      value: Fruit
+      value: Buah-buahan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19056,12 +19060,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 03bcd5693a5f9a74ca3f2a2d33b31b21, type: 3}
+      propertyPath: likedFood.Array.data[0]
+      value: Daging
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654823491807852479, guid: 03bcd5693a5f9a74ca3f2a2d33b31b21, type: 3}
       propertyPath: likedFood.Array.data[1]
-      value: Bone
+      value: Tulang
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 03bcd5693a5f9a74ca3f2a2d33b31b21, type: 3}
       propertyPath: likedFood.Array.data[2]
-      value: Insect
+      value: Serangga
       objectReference: {fileID: 0}
     - target: {fileID: 8654823491807852479, guid: 03bcd5693a5f9a74ca3f2a2d33b31b21, type: 3}
       propertyPath: minigames.Array.data[0].minigameIcon

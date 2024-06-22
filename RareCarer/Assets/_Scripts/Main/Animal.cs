@@ -126,6 +126,8 @@ namespace RC
             happyReaction.SetActive(false);
             sadReaction.SetActive(false);
 
+            Debug.Log($"Feeding {foodType}");
+
             if (likedFood.Contains(foodType))
             {
                 hunger += 15;
@@ -150,15 +152,13 @@ namespace RC
             {
                 float before = happiness;
                 happiness += 0.375f * Time.deltaTime;
-                //Debug.Log(animalName + " Persistent event count = " + OnHappinessChange.GetPersistentEventCount());
-                if(OnHappinessChange.GetPersistentEventCount() > 0) OnHappinessChange.Invoke(before, happiness);
+                OnHappinessChange.Invoke(before, happiness);
             }
             else if (!(hunger > 50 && cleanliness > 50 && play > 50))
             {
                 float before = happiness;
                 happiness -= 0.095f * Time.deltaTime;
-                //Debug.Log(animalName + " Persistent event count = " + OnHappinessChange.GetPersistentEventCount());
-                if (OnHappinessChange.GetPersistentEventCount() > 0) OnHappinessChange.Invoke(before, happiness);
+                OnHappinessChange.Invoke(before, happiness);
             }
 
             happiness = MathF.Min(MathF.Max(happiness, 0), 100f);

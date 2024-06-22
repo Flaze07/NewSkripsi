@@ -32,6 +32,7 @@ public class AnimalMinigame : MonoBehaviour
 
     public void UnlockSecondMinigame(float before, float current)
     {
+        if (minigames.Count <= 1) return;
         if(before < 25)
         {
             if(current >= 25)
