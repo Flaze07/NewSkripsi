@@ -553,15 +553,15 @@ MonoBehaviour:
     cha ching.wav by creek23 -- https://freesound.org/s/75235/ -- License:
     Attribution NonCommercial 4.0
 
-    
+
 
     Open_03.WAV by kjackson -- https://freesound.org/s/32634/
     -- License: Attribution NonCommercial 3.0
 
-    
 
-    Single Coin Return.wav
-    by tweeterdj -- https://freesound.org/s/29649/ -- License: Attribution 3.0
+
+    Single Coin Return.wav by tweeterdj
+    -- https://freesound.org/s/29649/ -- License: Attribution 3.0
 
 
     Apple_Crunch_16.wav
@@ -578,6 +578,10 @@ MonoBehaviour:
 
 
     Punch_02.wav by thefsoundman -- https://freesound.org/s/118513/
+    -- License: Creative Commons 0
+
+
+    hint.wav by dland -- https://freesound.org/s/320181/
     -- License: Creative Commons 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd1773b7ab61edf4fbfdc035b658583e, type: 2}
