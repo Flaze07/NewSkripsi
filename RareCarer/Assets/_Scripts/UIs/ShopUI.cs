@@ -18,6 +18,8 @@ namespace RC
         [SerializeField]
         private GameObject rightShopPanel;
         [SerializeField]
+        private GameObject notEnoughMoneyPanel;
+        [SerializeField]
         private Image foodImage;
         [SerializeField]
         private TMPro.TextMeshProUGUI ownedText;
@@ -32,8 +34,17 @@ namespace RC
         private AudioSource audioSource;
         [SerializeField]
         private AudioClip buttonAudioClip;
+        [SerializeField]
+        private AudioClip buyAudioClip;
+        [SerializeField]
+        private AudioClip notEnoughMoneyAudioClip;
 
         private Food selectedItem;
+
+        private void OnDisable()
+        {
+            selectedItem = null;
+        }
 
         void Start()
         {
@@ -77,6 +88,12 @@ namespace RC
                 GameManager.instance.Currency -= selectedItem.Price;
                 GameManager.instance.Foods.Find(f => f.Type == selectedItem.Type).Amount++;
                 ownedText.text = "Owned : " + GameManager.instance.Foods.Find(f => f.Type == selectedItem.Type).Amount;
+                audioSource.PlayOneShot(buyAudioClip);
+            }
+            else
+            {
+                notEnoughMoneyPanel.SetActive(true);
+                audioSource.PlayOneShot(notEnoughMoneyAudioClip);
             }
         }
 
