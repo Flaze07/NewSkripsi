@@ -9,6 +9,11 @@ namespace RC
     {
         [SerializeField] private TextMeshProUGUI nameText;
 
+        private void Start()
+        {
+            if (GameManager.instance.CurrentAnimal != null) ChangeNameToCurrent(GameManager.instance.CurrentAnimal);
+        }
+
         private void OnEnable()
         {
             GameManager.OnAnimalSwitch += ChangeNameToCurrent;
