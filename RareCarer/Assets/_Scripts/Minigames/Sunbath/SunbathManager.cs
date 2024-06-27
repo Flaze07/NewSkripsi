@@ -80,10 +80,10 @@ namespace RC.Sunbath
                 GameEnd();
             }
 
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                IncreaseScore(10);
-            }
+            //if(Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    IncreaseScore(10);
+            //}
         }
 
         private void GameEnd()
